@@ -1,0 +1,106 @@
+ .biography {
+        margin: 32px 5vw;
+
+        &__header {
+            font-family: "AvenirNextBold";
+            font-size: 24px;
+            line-height: 32px;
+            margin-bottom: 16px;
+        }
+
+        &__image {
+            width: 90vw;
+            // margin: 24px auto;
+        }
+
+        &__quote {
+            font-family: "AvenirNextDemiBold";
+            // font-weight: bold;
+            font-size: 16px;
+            line-height: 24px;
+        }
+
+        &__quote--source{
+            font-family: "AvenirNextDemiBold";
+            // font-size: 14px;
+            // line-height: 28px;
+            font-size: 0.9rem;
+            line-height: 0.9rem;
+            margin-bottom: 20px;
+        }
+
+        &__names {
+            margin-top: 40px;
+            font-family: "AvenirNextDemiBold";
+            // font-weight: bold;
+            font-size: 16px;
+            line-height: 16px;
+        }
+
+        &__text-container {
+            margin-top: 24px;
+            margin-bottom: 40px;
+            display: block;
+            justify-content: center;
+            align-items: flex-start;
+            
+
+        }
+
+        &__text {
+            margin-top: 0;
+            display: flex;
+            font-family: "AvenirNextRegular";
+            font-size: 0.76rem;
+            line-height: 1.14rem;
+        }
+ }
+
+
+@include desktop {
+    .biography {
+        margin-left: 180px;
+
+        &__header , &__quote {
+            font-family: "AvenirNextBold";
+            font-size: 36px;
+            line-height: 44px;
+        }
+
+        &__quote {
+            font-size: 24px;
+            line-height: 32px;
+        }
+        
+        &__quote--source{
+            font-family: "AvenirNextDemiBold";
+            font-size: 16px;
+            line-height: 24px;
+        }
+
+        &__content {
+            margin-left: 92px;
+
+        }
+
+        &__image {
+            width: 896px;
+            height: 450px;
+        }
+
+        &__text-container {
+            display: flex;
+            justify-content: center;
+
+        }
+
+        &__text {
+            
+            display: flex;
+            width: 420px;
+            font-family: "AvenirNextRegular";
+            font-size: 14px;
+            line-height: 22px;
+        }
+    }
+}

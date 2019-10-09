@@ -1,0 +1,57 @@
+.header {
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: space-between;
+    align-items: center;
+
+    //padding: 0 5vw;
+
+    width: 100vw;
+    height: 80px;
+    background-color: $black;
+
+    &__logo {
+        display: block;
+        height: 50%;
+        padding: 8px 0;
+        // font-family: "AvenirNextRegular";
+    }
+
+    &__list {
+        display: flex;
+        flex-direction: row;
+        height: 50%;
+        width: 100vw;
+    }
+
+    &__list-item
+    {
+        display: flex;
+        justify-content: center;
+        flex-direction: row;
+        width: 50vw;
+        align-items: center;
+        text-align: center;
+        font-size: 14px;
+        line-height: 22px;
+        color: $silver;
+        border-bottom: 5px solid $black;
+
+        &-text {
+            font-size: 14px;
+            line-height: 22px;
+            font-weight: normal;
+            font-family: "AvenirNextRegular";
+            font-weight: bold;
+
+        }
+
+        &--active {
+            color: $white;
+            border-bottom: 5px solid $white;
+        }
+    }
+
+}

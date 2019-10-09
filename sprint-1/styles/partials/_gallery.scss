@@ -1,0 +1,17 @@
+.gallery {
+    // margin: 32px 0;
+    padding: 32px 5vw;
+    background-color: $alabaster;
+
+    &__header {
+        font-family: "AvenirNextBold";
+        font-size: 24px;
+        line-height: 32px;
+    }
+    &__image {
+        margin-top: 8px;
+        margin-bottom: 8px;
+        width: 90vw;
+    }
+}
+

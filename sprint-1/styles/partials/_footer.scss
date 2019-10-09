@@ -1,0 +1,65 @@
+.footer {
+    padding: 48px 5vw;
+    background-color: $black;
+    color: $white;
+    font-family: "AvenirNextRegular";
+    font-weight: 100;
+    font-size: 0.76rem;
+    line-height: 1.14rem;
+
+    &__first-row {
+        display: flex;
+        flex-direction: column;
+    }
+    &__title {
+        font-family: "AvenirNextBold";
+        font-size: 36px;
+        line-height: 44px;
+    }
+
+    &__icon {
+        margin-right: 32px;
+    }
+
+    &__second-row {
+        display: flex;
+    }
+
+    &__contact {
+        display: flex;
+        flex-direction: column;
+    }
+    &__name {
+        display: flex;
+        flex-direction: column;
+        // font-family: "AvenirNextDemiBold";
+
+        font-weight: 600;
+
+        font-size: 14px;
+        line-height: 22px;
+
+    }
+
+    &__address {
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__email {
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__copyright {
+        display: flex;
+        flex-direction: column;
+    }
+
+    // &__copyright--text {
+    //     font-family: "AvenirNextRegular";
+    //     font-weight: 100;
+    //     font-size: 0.76rem;
+    //     line-height: 1.14rem;
+    // }
+}
