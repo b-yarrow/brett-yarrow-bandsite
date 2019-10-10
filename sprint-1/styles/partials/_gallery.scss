@@ -42,16 +42,6 @@
     padding: 32px 12.5vw;
     // width: 93.75vw;
 
-    &__title {
-      @include desk__h1;
-    }
-
-    &__image-container {
-      display: flex;
-      flex-flow: wrap;
-      justify-content: space-between;
-    }
-
     &__image {
       width: 344px;
       // margin: 0 24px 24px 0;

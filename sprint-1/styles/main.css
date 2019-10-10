@@ -375,6 +375,9 @@
     font-family: "AvenirNextBold";
     font-size: 24px;
     line-height: 32px;
+    width: 804px;
+    -ms-flex-item-align: start;
+        align-self: flex-start;
   }
   .biography__quote--source {
     font-size: 16px;
@@ -401,7 +404,7 @@
   .biography__text {
     font-size: 14px;
     line-height: 22px;
-    margin: 0 24px 0 0;
+    margin: 0 40px 0 0;
   }
 }
 
@@ -448,20 +451,6 @@
 @media only screen and (min-width: 1440px) {
   .gallery {
     padding: 32px 12.5vw;
-  }
-  .gallery__title {
-    font-size: 36px;
-    line-height: 44px;
-  }
-  .gallery__image-container {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -ms-flex-flow: wrap;
-        flex-flow: wrap;
-    -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
   }
   .gallery__image {
     width: 344px;
@@ -610,6 +599,12 @@
     -webkit-box-direction: normal;
         -ms-flex-direction: row;
             flex-direction: row;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .footer {
+    padding: 48px 12.5vw;
   }
 }
 

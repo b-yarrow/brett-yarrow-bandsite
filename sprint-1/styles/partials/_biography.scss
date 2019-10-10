@@ -128,6 +128,8 @@
 
     &__quote {
       @include desk__h2;
+      width: 804px;
+      align-self: flex-start;
     }
 
     &__quote--source {
@@ -148,7 +150,7 @@
 
     &__text {
       @include desk__h4-paragraph;
-      margin: 0 24px 0 0;
+      margin: 0 40px 0 0;
       // width: 348px;
     }
   }
