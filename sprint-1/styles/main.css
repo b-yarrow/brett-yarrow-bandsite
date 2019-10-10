@@ -122,6 +122,42 @@
   }
 }
 
+@media only screen and (min-width: 1440px) {
+  .header {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    padding: 0 12.5vw;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+  }
+  .header__logo {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    height: auto;
+    margin-right: 56px;
+  }
+  .header__list {
+    height: 100%;
+    width: 160px;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+  }
+  .header__list-item {
+    font-family: "AvenirNextBold";
+    font-size: 24px;
+    line-height: 32px;
+    width: 50%;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+}
+
 .hero {
   position: relative;
   height: 183px;
@@ -288,6 +324,52 @@
   .biography__image {
     margin: 0 3.125vw 0 3.125vw;
     width: 93.75vw;
+  }
+  .biography__quote {
+    font-family: "AvenirNextBold";
+    font-size: 24px;
+    line-height: 32px;
+  }
+  .biography__quote--source {
+    font-size: 16px;
+    line-height: 24px;
+  }
+  .biography__names {
+    font-family: "AvenirNextBold";
+    font-size: 24px;
+    line-height: 32px;
+  }
+  .biography__text-container {
+    margin-top: 24px;
+    margin-bottom: 40px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+  }
+  .biography__text {
+    font-size: 14px;
+    line-height: 22px;
+    margin: 0 24px 0 0;
+  }
+}
+
+@media only screen and (min-width: 1440px) {
+  .biography__content {
+    padding: 0 272px;
+  }
+  .biography__title {
+    font-size: 36px;
+    line-height: 44px;
+    padding-left: 180px;
+  }
+  .biography__image {
+    width: 896px;
   }
   .biography__quote {
     font-family: "AvenirNextBold";
