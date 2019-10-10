@@ -1,39 +1,60 @@
 .gallery {
-    // margin: 32px 0;
-    padding: 32px 5vw;
-    background-color: $alabaster;
+  // margin: 32px 0;
+  padding: 32px 5vw;
+  background-color: $alabaster;
 
-    &__title {
-        font-family: "AvenirNextBold";
-        font-size: 24px;
-        line-height: 32px;
-    }
-    &__image {
-        margin-top: 8px;
-        margin-bottom: 8px;
-        width: 90vw;
-    }
+  &__title {
+    font-family: "AvenirNextBold";
+    font-size: 24px;
+    line-height: 32px;
+  }
+  &__image {
+    margin-top: 8px;
+    margin-bottom: 8px;
+    width: 90vw;
+  }
 }
 
 @include tablet {
-    .gallery {
-        padding: 32px 3.125vw;
-        // width: 93.75vw;
+  .gallery {
+    padding: 32px 3.125vw;
+    // width: 93.75vw;
 
-        &__title {
-            @include desk__h1;
-        }
-
-        &__image-container {
-            display: flex;
-            flex-flow: wrap;
-            justify-content: space-between;
-        }
-
-        &__image {
-            width: 224px;
-            // margin: 0 24px 24px 0;
-        }
+    &__title {
+      @include desk__h1;
     }
-    
+
+    &__image-container {
+      display: flex;
+      flex-flow: wrap;
+      justify-content: space-between;
+    }
+
+    &__image {
+      width: 224px;
+      // margin: 0 24px 24px 0;
+    }
+  }
+}
+
+@include desktop {
+  .gallery {
+    padding: 32px 12.5vw;
+    // width: 93.75vw;
+
+    &__title {
+      @include desk__h1;
+    }
+
+    &__image-container {
+      display: flex;
+      flex-flow: wrap;
+      justify-content: space-between;
+    }
+
+    &__image {
+      width: 344px;
+      // margin: 0 24px 24px 0;
+    }
+  }
 }

@@ -445,6 +445,29 @@
   }
 }
 
+@media only screen and (min-width: 1440px) {
+  .gallery {
+    padding: 32px 12.5vw;
+  }
+  .gallery__title {
+    font-size: 36px;
+    line-height: 44px;
+  }
+  .gallery__image-container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-flow: wrap;
+        flex-flow: wrap;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+  .gallery__image {
+    width: 344px;
+  }
+}
+
 .footer {
   padding: 48px 5vw;
   background-color: #323232;
