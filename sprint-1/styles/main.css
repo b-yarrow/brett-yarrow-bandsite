@@ -182,6 +182,27 @@
   }
 }
 
+@media only screen and (min-width: 1440px) {
+  .hero {
+    height: 670px;
+  }
+  .hero__image {
+    height: 670px;
+  }
+  .hero__overlay {
+    height: 670px;
+  }
+  .hero__text {
+    margin-left: 180px;
+    top: 30%;
+  }
+  .hero__title {
+    font-family: "AvenirNextBold";
+    font-size: 60px;
+    line-height: 68px;
+  }
+}
+
 .biography__content {
   display: -webkit-box;
   display: -ms-flexbox;
