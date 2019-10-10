@@ -104,8 +104,40 @@
   }
 }
 
-@include tablet {
+@include desktop {
   .footer {
+    position: relative;
     padding: 48px 12.5vw;
+
+    &__first-row {
+      justify-content: flex-start;
+    }
+
+    &__title {
+      width: 252px;
+      margin-right: 24px;
+    }
+
+    &__icon-group {
+      justify-self: flex-start;
+    }
+
+    &__logo {
+      display: inline-block;
+      float: right;
+      margin-top: 16px;
+      width: 120px;
+      height: 24px;
+    }
+
+    &__second-row {
+      justify-content: flex-start;
+    }
+
+    &__contact {
+      width: 252px;
+      margin-right: 24px;
+      
+    }
   }
 }

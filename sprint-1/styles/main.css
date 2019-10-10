@@ -602,9 +602,38 @@
   }
 }
 
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 1440px) {
   .footer {
+    position: relative;
     padding: 48px 12.5vw;
+  }
+  .footer__first-row {
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+  }
+  .footer__title {
+    width: 252px;
+    margin-right: 24px;
+  }
+  .footer__icon-group {
+    justify-self: flex-start;
+  }
+  .footer__logo {
+    display: inline-block;
+    float: right;
+    margin-top: 16px;
+    width: 120px;
+    height: 24px;
+  }
+  .footer__second-row {
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+  }
+  .footer__contact {
+    width: 252px;
+    margin-right: 24px;
   }
 }
 
