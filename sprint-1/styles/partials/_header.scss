@@ -37,6 +37,7 @@
         font-size: 14px;
         line-height: 22px;
         color: $silver;
+        border-top: 5px solid $black;
         border-bottom: 5px solid $black;
 
         &-text {
@@ -54,4 +55,31 @@
         }
     }
 
+}
+
+@include tablet {
+    .header {
+        flex-direction: row;
+        padding: 0 3.125vw;
+        justify-content: flex-start;
+
+        &__logo {
+            display: flex;
+            height: auto;
+            margin-right: 56px;
+        }
+
+        &__list {
+            height: 100%;
+            width: 160px;
+            justify-content: flex-start;
+        }
+
+        &__list-item {
+            @include desk__h2;
+            width: 50%;
+            justify-content: center;
+            
+        }
+    }
 }

@@ -10,19 +10,29 @@
     &__first-row {
         display: flex;
         flex-direction: column;
+        padding-bottom: 32px;
+
     }
     &__title {
         font-family: "AvenirNextBold";
         font-size: 36px;
         line-height: 44px;
+        margin: 0;
+        padding-bottom: 32px;
     }
 
     &__icon {
         margin-right: 32px;
     }
 
+    &__logo {
+        display: none;
+        float: right;
+    }
+
     &__second-row {
         display: flex;
+        flex-direction: column;
     }
 
     &__contact {
@@ -62,4 +72,36 @@
     //     font-size: 0.76rem;
     //     line-height: 1.14rem;
     // }
+}
+
+@include tablet  {
+    .footer {
+        padding: 48px 3.125vw;
+        @include desk__h4-lists-contact;
+
+        &__first-row {
+            flex-direction: row;
+            padding-bottom: 32px;
+            justify-content: space-between;
+            align-items: baseline;
+        }
+
+        &__logo {
+            display: block;
+            float: right;
+        }
+
+        &__second-row {
+            flex-direction: row;
+            justify-content: space-between;
+        }
+
+        &__name {
+            @include desk__h3;
+        }
+
+        &__copyright {
+            flex-direction: row;
+        }
+    }
 }
