@@ -285,14 +285,12 @@
 .biography__names {
   -ms-flex-item-align: start;
       align-self: flex-start;
-  margin-top: 40px;
   font-family: "AvenirNextDemiBold";
   font-size: 16px;
   line-height: 16px;
 }
 
 .biography__text-container {
-  margin-top: 24px;
   margin-bottom: 40px;
   display: block;
   -webkit-box-pack: center;
@@ -338,9 +336,10 @@
     font-family: "AvenirNextBold";
     font-size: 24px;
     line-height: 32px;
+    margin: 0;
+    margin-bottom: 32px;
   }
   .biography__text-container {
-    margin-top: 24px;
     margin-bottom: 40px;
     display: -webkit-box;
     display: -ms-flexbox;
@@ -367,9 +366,12 @@
     font-size: 36px;
     line-height: 44px;
     padding-left: 180px;
+    margin-top: 48px;
+    margin-bottom: 48px;
   }
   .biography__image {
     width: 896px;
+    margin-bottom: 48px;
   }
   .biography__quote {
     font-family: "AvenirNextBold";
@@ -378,10 +380,12 @@
     width: 804px;
     -ms-flex-item-align: start;
         align-self: flex-start;
+    margin-bottom: 40px;
   }
   .biography__quote--source {
     font-size: 15.9px;
     line-height: 24px;
+    margin-bottom: 56px;
   }
   .biography__names {
     font-family: "AvenirNextBold";
@@ -389,7 +393,6 @@
     line-height: 32px;
   }
   .biography__text-container {
-    margin-top: 24px;
     margin-bottom: 40px;
     display: -webkit-box;
     display: -ms-flexbox;
@@ -657,5 +660,9 @@ html, body {
 *, *:before, *:after {
   -webkit-box-sizing: inherit;
           box-sizing: inherit;
+}
+
+h1, h2, h3, h4, h5 {
+  margin: 0;
 }
 /*# sourceMappingURL=main.css.map */
