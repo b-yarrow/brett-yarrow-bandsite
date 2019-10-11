@@ -331,7 +331,7 @@
     line-height: 32px;
   }
   .biography__quote--source {
-    font-size: 16px;
+    font-size: 15.9px;
     line-height: 24px;
   }
   .biography__names {
@@ -380,7 +380,7 @@
         align-self: flex-start;
   }
   .biography__quote--source {
-    font-size: 16px;
+    font-size: 15.9px;
     line-height: 24px;
   }
   .biography__names {
@@ -569,30 +569,51 @@
     -webkit-box-direction: normal;
         -ms-flex-direction: row;
             flex-direction: row;
-    padding-bottom: 32px;
-    -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
+    padding-bottom: 0;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
     -webkit-box-align: baseline;
         -ms-flex-align: baseline;
             align-items: baseline;
+    margin-bottom: 48px;
+  }
+  .footer__title {
+    width: 224px;
+    margin-right: 24px;
+    padding-bottom: 0;
+  }
+  .footer__icon-group {
+    margin-left: 24px;
   }
   .footer__logo {
-    display: block;
+    display: inline-block;
     float: right;
+    margin-top: 8px;
+    width: 120px;
+    height: 24px;
   }
   .footer__second-row {
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
         -ms-flex-direction: row;
             flex-direction: row;
-    -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    margin-bottom: 40px;
+  }
+  .footer__contact {
+    width: 224px;
+    margin-right: 24px;
   }
   .footer__name {
-    font-size: 16px;
+    font-size: 15.9px;
     line-height: 24px;
+    margin-bottom: 24px;
+  }
+  .footer__address {
+    margin-bottom: 32px;
   }
   .footer__copyright {
     -webkit-box-orient: horizontal;
@@ -607,24 +628,12 @@
     position: relative;
     padding: 48px 12.5vw;
   }
-  .footer__first-row {
-    -webkit-box-pack: start;
-        -ms-flex-pack: start;
-            justify-content: flex-start;
-  }
   .footer__title {
     width: 252px;
-    margin-right: 24px;
   }
   .footer__icon-group {
     justify-self: flex-start;
-  }
-  .footer__logo {
-    display: inline-block;
-    float: right;
-    margin-top: 16px;
-    width: 120px;
-    height: 24px;
+    margin-left: 0;
   }
   .footer__second-row {
     -webkit-box-pack: start;
