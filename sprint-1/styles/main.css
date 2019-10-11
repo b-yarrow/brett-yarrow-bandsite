@@ -114,7 +114,8 @@
     font-family: "AvenirNextBold";
     font-size: 24px;
     line-height: 32px;
-    width: 50%;
+    width: 80px;
+    margin-right: 56px;
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;
@@ -124,16 +125,6 @@
 @media only screen and (min-width: 1440px) {
   .header {
     padding: 0 12.5vw;
-  }
-  .header__list-item {
-    font-family: "AvenirNextBold";
-    font-size: 24px;
-    line-height: 32px;
-    width: 80px;
-    margin-right: 56px;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
   }
 }
 
