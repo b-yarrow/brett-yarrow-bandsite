@@ -1,18 +1,19 @@
 .hero {
   position: relative;
-  height: 183px;
+  $hero-height: 183px;
+  height: $hero-height;
 
   &__image {
     position: absolute;
     width: 100vw;
-    height: 183px;
+    height: $hero-height;
     z-index: 0;
   }
 
   &__overlay {
     position: absolute;
     width: 100vw;
-    height: 183px;
+    height: $hero-height;
     background-color: rgba(23, 23, 23, 0.5);
 
     z-index: 1;
@@ -22,7 +23,7 @@
     display: flex;
     position: absolute;
     align-items: center;
-    top: 20%;
+    top: 33%;
     margin-left: 16px;
     z-index: 2;
   }
@@ -37,14 +38,15 @@
 
 @include tablet {
   .hero {
-    height: 400px;
+    $hero-height: 400px;
+    height: $hero-height;
 
     &__image {
-      height: 400px;
+      height: $hero-height;
     }
 
     &__overlay {
-      height: 400px;
+      height: $hero-height;
     }
 
     &__text {
