@@ -1,5 +1,4 @@
 .gallery {
-  // margin: 32px 0;
   padding: 32px 5vw;
   background-color: $alabaster;
 
@@ -7,10 +6,10 @@
     font-family: "AvenirNextBold";
     font-size: 24px;
     line-height: 32px;
+    margin-bottom: 24px;
   }
   &__image {
-    margin-top: 8px;
-    margin-bottom: 8px;
+    margin-bottom: 16px;
     width: 90vw;
   }
 }
@@ -18,7 +17,6 @@
 @include tablet {
   .gallery {
     padding: 32px 3.125vw;
-    // width: 93.75vw;
 
     &__title {
       @include desk__h1;
@@ -32,7 +30,6 @@
 
     &__image {
       width: 224px;
-      // margin: 0 24px 24px 0;
     }
   }
 }
@@ -40,11 +37,9 @@
 @include desktop {
   .gallery {
     padding: 32px 12.5vw;
-    // width: 93.75vw;
 
     &__image {
       width: 344px;
-      // margin: 0 24px 24px 0;
     }
   }
 }

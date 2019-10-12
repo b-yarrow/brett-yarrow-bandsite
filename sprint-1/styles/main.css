@@ -388,11 +388,11 @@
   font-family: "AvenirNextBold";
   font-size: 24px;
   line-height: 32px;
+  margin-bottom: 24px;
 }
 
 .gallery__image {
-  margin-top: 8px;
-  margin-bottom: 8px;
+  margin-bottom: 16px;
   width: 90vw;
 }
 
@@ -474,6 +474,7 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  margin-bottom: 0;
 }
 
 .footer__contact {
@@ -484,6 +485,7 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  margin-bottom: 40px;
 }
 
 .footer__name {
@@ -497,6 +499,7 @@
   font-weight: 600;
   font-size: 14px;
   line-height: 22px;
+  margin-bottom: 24px;
 }
 
 .footer__address {
@@ -507,6 +510,7 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  margin-bottom: 32px;
 }
 
 .footer__email {
@@ -577,6 +581,7 @@
   .footer__contact {
     width: 224px;
     margin-right: 24px;
+    margin-bottom: 0;
   }
   .footer__name {
     font-size: 15.9px;
