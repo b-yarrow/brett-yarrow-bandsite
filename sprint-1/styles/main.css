@@ -402,6 +402,16 @@
 
 @media only screen and (min-width: 768px) {
   .gallery {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
     padding: 32px 3.125vw;
   }
   .gallery__title {
@@ -421,6 +431,8 @@
     height: 426px;
     -ms-flex-line-pack: justify;
         align-content: space-between;
+    -ms-flex-item-align: center;
+        align-self: center;
   }
   .gallery__image {
     margin: 0;
