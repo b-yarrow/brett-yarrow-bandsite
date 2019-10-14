@@ -1,6 +1,9 @@
 .gallery {
   padding: 32px 5vw;
   background-color: $alabaster;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
 
   &__title {
     font-family: "AvenirNextBold";
@@ -8,18 +11,22 @@
     line-height: 32px;
     margin-bottom: 24px;
   }
+  
+  &__image-container {
+    width: 288px;
+    height: auto;
+    align-self: center;
+  }
   &__image {
     margin-bottom: 16px;
-    width: 90vw;
+    width: 288px;
     height: 162px;
+
   }
 }
 
 @include tablet {
   .gallery {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
     padding: 32px 3.125vw;
 
     &__title {
@@ -33,7 +40,6 @@
       width: 720px;
       height: 426px;
       align-content: space-between;
-      align-self: center;
     }
 
     &__image {
