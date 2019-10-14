@@ -11,6 +11,7 @@
   &__image {
     margin-bottom: 16px;
     width: 90vw;
+    height: 162px;
   }
 }
 
@@ -26,10 +27,15 @@
       display: flex;
       flex-flow: wrap;
       justify-content: space-between;
+      width: 720px;
+      height: 426px;
+      align-content: space-between;
     }
 
     &__image {
+      margin: 0;
       width: 224px;
+      height: 126px;
     }
   }
 }
@@ -38,8 +44,18 @@
   .gallery {
     padding: 32px 12.5vw;
 
+    &__image-container {
+      display: flex;
+      flex-flow: wrap;
+      justify-content: space-between;
+      width: 1080px;
+      height: 627px;
+      align-content: space-between;
+    }
+
     &__image {
       width: 344px;
+      height: 193px;
     }
   }
 }

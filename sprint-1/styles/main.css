@@ -1,15 +1,15 @@
 @font-face {
-  src: url("../../assets/fonts/AvenirNextRegular.otf");
+  src: url("../assets/fonts/AvenirNextRegular.otf");
   font-family: "AvenirNextRegular";
 }
 
 @font-face {
-  src: url("../../assets/fonts/AvenirNextDemi.otf");
+  src: url("../assets/fonts/AvenirNextDemi.otf");
   font-family: "AvenirNextDemiBold";
 }
 
 @font-face {
-  src: url("../../assets/fonts/AvenirNextBold.otf");
+  src: url("../assets/fonts/AvenirNextBold.otf");
   font-family: "AvenirNextBold";
 }
 
@@ -27,7 +27,7 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  width: 100vw;
+  width: 100%;
   height: 80px;
   background-color: #323232;
 }
@@ -47,7 +47,7 @@
       -ms-flex-direction: row;
           flex-direction: row;
   height: 50%;
-  width: 100vw;
+  width: 100%;
 }
 
 .header__list-item {
@@ -132,14 +132,14 @@
 
 .hero__image {
   position: absolute;
-  width: 100vw;
+  width: 100%;
   height: 183px;
   z-index: 0;
 }
 
 .hero__overlay {
   position: absolute;
-  width: 100vw;
+  width: 100%;
   height: 183px;
   background-color: rgba(23, 23, 23, 0.5);
   z-index: 1;
@@ -233,7 +233,8 @@
 
 .biography__image {
   margin: 0 5vw 24px 5vw;
-  width: 90vw;
+  width: 288px;
+  height: 145px;
 }
 
 .biography__quote {
@@ -297,7 +298,8 @@
   }
   .biography__image {
     margin: 0 3.125vw 48px 3.125vw;
-    width: 93.75vw;
+    width: 720px;
+    height: 362px;
   }
   .biography__quote {
     font-family: "AvenirNextBold";
@@ -351,6 +353,7 @@
   .biography__image {
     margin: 0 12.5vw 48px 12.5vw;
     width: 896px;
+    height: 450px;
   }
   .biography__quote {
     font-family: "AvenirNextBold";
@@ -394,6 +397,7 @@
 .gallery__image {
   margin-bottom: 16px;
   width: 90vw;
+  height: 162px;
 }
 
 @media only screen and (min-width: 768px) {
@@ -413,9 +417,15 @@
     -webkit-box-pack: justify;
         -ms-flex-pack: justify;
             justify-content: space-between;
+    width: 720px;
+    height: 426px;
+    -ms-flex-line-pack: justify;
+        align-content: space-between;
   }
   .gallery__image {
+    margin: 0;
     width: 224px;
+    height: 126px;
   }
 }
 
@@ -423,8 +433,23 @@
   .gallery {
     padding: 32px 12.5vw;
   }
+  .gallery__image-container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-flow: wrap;
+        flex-flow: wrap;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    width: 1080px;
+    height: 627px;
+    -ms-flex-line-pack: justify;
+        align-content: space-between;
+  }
   .gallery__image {
     width: 344px;
+    height: 193px;
   }
 }
 
