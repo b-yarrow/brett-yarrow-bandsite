@@ -1,0 +1,25 @@
+@import "./partials/breakpoints";
+@import "./partials/typography";
+@import "./partials/colors";
+@import "./partials/fonts";
+@import "./partials/header";
+@import "./partials/hero";
+@import "./partials/biography";
+@import "./partials/gallery";
+@import "./partials/footer";
+
+html , body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: $black;
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+h1, h2, h3, h4, h5, p {
+    margin: 0;
+}
+
+

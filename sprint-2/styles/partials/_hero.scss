@@ -1,0 +1,85 @@
+.hero {
+  position: relative;
+  $hero-height: 183px;
+  height: $hero-height;
+
+  &__image {
+    position: absolute;
+    width: 100%;
+    height: $hero-height;
+    z-index: 0;
+  }
+
+  &__overlay {
+    position: absolute;
+    width: 100%;
+    height: $hero-height;
+    background-color: rgba(23, 23, 23, 0.5);
+
+    z-index: 1;
+  }
+
+  &__text {
+    display: flex;
+    position: absolute;
+    align-items: center;
+    top: 33%;
+    margin-left: 16px;
+    z-index: 2;
+  }
+
+  &__title {
+    font-family: "AvenirNextBold";
+    font-size: 24px;
+    line-height: 32px;
+    color: $white;
+  }
+}
+
+@include tablet {
+  .hero {
+    $hero-height: 400px;
+    height: $hero-height;
+
+    &__image {
+      height: $hero-height;
+    }
+
+    &__overlay {
+      height: $hero-height;
+    }
+
+    &__text {
+      margin-left: 24px;
+    }
+
+    &__title {
+      @include desk__hero-header;
+    }
+  }
+}
+
+@include desktop {
+  .hero {
+    $hero-height: 670px;
+
+    height: $hero-height;
+
+    &__image {
+      height: $hero-height;
+    }
+
+    &__overlay {
+      height: $hero-height;
+    }
+
+    &__text {
+      margin-left: 180px;
+      top: 35%;
+    }
+
+    &__title {
+      @include desk__hero-header;
+    }
+  }
+}
