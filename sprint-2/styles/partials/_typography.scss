@@ -34,3 +34,21 @@
     font-size: 12px;
     line-height: 20px;
 }
+
+@mixin mob__h2 {
+    font-size: 14px;
+    line-height: 22px;
+}
+
+@mixin mob__h4-paragraph {
+    font-family: "AvenirNextRegular";
+    font-size: 13px;
+    line-height: 18px;
+}
+
+@mixin mob__h5 {
+    font-size: 12px;
+    line-height: 18px;
+    font-family: "AvenirNextRegular";
+    color: $silver;
+}

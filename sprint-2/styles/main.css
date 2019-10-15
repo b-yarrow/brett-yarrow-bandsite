@@ -471,6 +471,234 @@
   }
 }
 
+.conversation {
+  padding: 32px 5vw 40px 5vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+}
+
+.conversation__title {
+  font-family: "AvenirNextBold";
+  font-size: 24px;
+  line-height: 32px;
+  margin-bottom: 24px;
+}
+
+.conversation__container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.conversation__post {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 24px 0;
+  border-bottom: 1px solid #e1e1e1;
+}
+
+.conversation__post--create {
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.conversation__image-box {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 54px;
+}
+
+.conversation__image {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  z-index: 2;
+}
+
+.conversation__image--create {
+  display: block;
+  width: 48px;
+  height: 48px;
+}
+
+.conversation__text-box {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 234px;
+}
+
+.conversation__text-box--create {
+  width: 224px;
+}
+
+.conversation__header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-bottom: 16px;
+}
+
+.conversation__name {
+  font-size: 14px;
+  line-height: 22px;
+  font-family: "AvenirNextDemiBold";
+}
+
+.conversation__name--create {
+  font-size: 12px;
+  line-height: 18px;
+  font-family: "AvenirNextRegular";
+  color: #afafaf;
+  font-family: "AvenirNextDemiBold";
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.conversation__name-input {
+  font-family: "AvenirNextRegular";
+  font-size: 13px;
+  line-height: 18px;
+  height: 48px;
+  border: 1px solid #e1e1e1;
+  border-radius: 4px;
+  background-color: #fafafa;
+  margin-bottom: 24px;
+  padding-left: 16px;
+  color: #323232;
+}
+
+.conversation__name-input::-webkit-input-placeholder {
+  color: #323232;
+}
+
+.conversation__name-input:-ms-input-placeholder {
+  color: #323232;
+}
+
+.conversation__name-input::-ms-input-placeholder {
+  color: #323232;
+}
+
+.conversation__name-input::placeholder {
+  color: #323232;
+}
+
+.conversation__name-input:focus {
+  border: 2px solid #323232;
+  outline: none;
+}
+
+.conversation__date {
+  font-size: 12px;
+  line-height: 18px;
+  font-family: "AvenirNextRegular";
+  color: #afafaf;
+}
+
+.conversation__comment {
+  font-family: "AvenirNextRegular";
+  font-family: "AvenirNextRegular";
+  font-size: 13px;
+  line-height: 18px;
+}
+
+.conversation__comment--create {
+  font-size: 12px;
+  line-height: 18px;
+  font-family: "AvenirNextRegular";
+  color: #afafaf;
+  font-family: "AvenirNextDemiBold";
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.conversation__comment-input {
+  font-family: "AvenirNextRegular";
+  font-size: 13px;
+  line-height: 18px;
+  height: 96px;
+  border: 1px solid #e1e1e1;
+  border-radius: 4px;
+  background-color: #fafafa;
+  margin-bottom: 24px;
+  padding-left: 16px;
+  padding-top: 16px;
+  color: #323232;
+}
+
+.conversation__comment-input::-webkit-input-placeholder {
+  color: #323232;
+}
+
+.conversation__comment-input:-ms-input-placeholder {
+  color: #323232;
+}
+
+.conversation__comment-input::-ms-input-placeholder {
+  color: #323232;
+}
+
+.conversation__comment-input::placeholder {
+  color: #323232;
+}
+
+.conversation__comment-input:focus {
+  border: 2px solid #323232;
+  outline: none;
+}
+
+.conversation__button {
+  font-family: "AvenirNextRegular";
+  font-size: 13px;
+  line-height: 18px;
+  font-family: "AvenirNextDemiBold";
+  height: 48px;
+  border-radius: 4px;
+  background-color: #323232;
+  border: none;
+  color: #ffffff;
+}
+
+.conversation__button:hover {
+  background-color: #000000;
+}
+
 .footer {
   padding: 48px 5vw;
   background-color: #323232;

@@ -1,0 +1,175 @@
+.conversation {
+  padding: 32px 5vw 40px 5vw;
+//   background-color: $alabaster;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+
+  &__title {
+    font-family: "AvenirNextBold";
+    font-size: 24px;
+    line-height: 32px;
+    margin-bottom: 24px;
+  }
+  
+  &__container {
+      display: flex;
+      flex-direction: column;
+  }
+
+  
+  &__post {
+      display: flex;
+      padding: 24px 0;
+      border-bottom: 1px solid $mercury;
+  }
+
+  &__post--create {
+      justify-content: space-between;
+  }
+
+  &__image-box {
+    display: flex;
+    width: 54px;
+    // background-color: $mercury;
+  }
+
+//   &__image-box--create {
+
+//   }
+
+  &__image {
+    display: flex;
+    height: 40px;
+    width: 40px;
+    // background-color: $mercury;
+    // border: 1px solid $mercury;
+    border-radius: 50%;
+    z-index: 2;
+  }
+
+  &__image--create {
+      display: block;
+      width: 48px;
+      height: 48px;
+  }
+
+
+  &__text-box {
+      display: flex;
+      flex-direction: column;
+      width: 234px;
+  }
+
+  &__text-box--create {
+      width: 224px;
+  }
+
+  &__header {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 16px;
+    
+  }
+
+  &__name {
+    @include mob__h2;
+    font-family: "AvenirNextDemiBold";
+  }
+
+  &__name--create {
+    // @include mob__h2;
+    @include mob__h5;
+    font-family: "AvenirNextDemiBold";
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__name-input {
+      @include mob__h4-paragraph;
+      height: 48px;
+      border: 1px solid $mercury;
+      border-radius: 4px;
+      background-color: $alabaster;
+      margin-bottom: 24px;
+      padding-left: 16px;
+      color: $black;
+
+      &::placeholder {
+          color: $black;
+      }
+
+      &:focus {
+          border: 2px solid $black;
+          outline: none;
+      }
+
+  }
+
+  &__date {
+    @include mob__h5;
+    
+  }
+
+  &__comment {
+      font-family: "AvenirNextRegular";
+      @include mob__h4-paragraph;
+  }
+
+  &__comment--create {
+      @include mob__h5;
+      font-family: "AvenirNextDemiBold";
+      display: flex;
+      flex-direction: column;
+  }
+
+  &__comment-input {
+      @include mob__h4-paragraph;
+      height: 96px;
+      border: 1px solid $mercury;
+      border-radius: 4px;
+      background-color: $alabaster;
+      margin-bottom: 24px;
+      padding-left: 16px;
+      padding-top: 16px;
+      color: $black;
+      &::placeholder {
+          color: $black;
+      }
+
+      &:focus {
+          border: 2px solid $black;
+          outline: none;
+      }
+
+  }
+
+  &__button {
+      @include mob__h4-paragraph;
+      font-family: "AvenirNextDemiBold";
+    //   width: 224px;
+      height: 48px;
+      border-radius: 4px;
+      background-color: $black;
+    //   border: 1px solid $black;
+    border: none;
+      color: $white;
+
+      &:hover{
+        background-color: #000000;
+      }
+  }
+
+}
+
+@include tablet {
+  .conversation {
+
+  }
+}
+
+@include desktop {
+  .conversation {
+
+  }
+}
