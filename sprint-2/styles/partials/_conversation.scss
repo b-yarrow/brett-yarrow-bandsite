@@ -54,9 +54,11 @@
   }
 
   &__image--create {
-      display: block;
-      width: 48px;
-      height: 48px;
+        // display: block;
+        width: 48px;
+        height: 48px;
+        position: absolute;
+        clip-path: rect(0px,200px,200px,0px);
   }
 
 
@@ -128,43 +130,52 @@
       flex-direction: column;
   }
 
-  &__comment-input {
-      @include mob__h4-paragraph;
-      height: 96px;
-      border: 1px solid $mercury;
-      border-radius: 4px;
-      background-color: $alabaster;
-      margin-bottom: 24px;
-      padding-left: 16px;
-      padding-top: 16px;
-      color: $black;
-      &::placeholder {
-          color: $black;
-      }
+    &__comment-input {
+        @include mob__h4-paragraph;
+        height: 96px;
+        border: 1px solid $mercury;
+        border-radius: 4px;
+        background-color: $alabaster;
+        margin-bottom: 24px;
+        padding-left: 16px;
+        padding-top: 16px;
+        color: $black;
+        &::placeholder {
+            color: $black;
+        }
 
-      &:focus {
-          border: 2px solid $black;
-          outline: none;
-      }
+        &:focus {
+            border: 2px solid $black;
+            outline: none;
+        }
+    }
 
-  }
+    &__button {
+        @include mob__h4-paragraph;
+        font-family: "AvenirNextDemiBold";
 
-  &__button {
-      @include mob__h4-paragraph;
-      font-family: "AvenirNextDemiBold";
-    //   width: 224px;
-      height: 48px;
-      border-radius: 4px;
-      background-color: $black;
-    //   border: 1px solid $black;
-    border: none;
-      color: $white;
+        height: 48px;
+        border-radius: 4px;
+        background-color: $black;
+        border: none;
+        color: $white;
 
-      &:hover{
-        background-color: #000000;
-      }
-  }
+        &:hover{
+            border: 2px solid $black;
+            background-color: #000000;
+            outline: none;
+        }
 
+        &:focus {
+            border: 2px solid $black;
+            outline: none;
+        }
+
+        &:active {
+            border: 2px solid $black;
+            outline: none;
+        }
+    }
 }
 
 @include tablet {
@@ -223,13 +234,20 @@
         }
 
         &__comment-input {
-            @include mob__h4-paragraph;
+            @include desk__h4-paragraph;
+        }
+
+        &__button {
+            @include desk__h4-paragraph;
+            width: 160px;
+            align-self: flex-end;
+
         }
     }
 }
 
 @include desktop {
     .conversation {
-
+        font-family: 'Courier New', Courier, monospace;
     }
 }

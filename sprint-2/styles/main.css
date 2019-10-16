@@ -544,9 +544,11 @@
 }
 
 .conversation__image--create {
-  display: block;
   width: 48px;
   height: 48px;
+  position: absolute;
+  -webkit-clip-path: rect(0px, 200px, 200px, 0px);
+          clip-path: rect(0px, 200px, 200px, 0px);
 }
 
 .conversation__text-box {
@@ -706,7 +708,19 @@
 }
 
 .conversation__button:hover {
+  border: 2px solid #323232;
   background-color: #000000;
+  outline: none;
+}
+
+.conversation__button:focus {
+  border: 2px solid #323232;
+  outline: none;
+}
+
+.conversation__button:active {
+  border: 2px solid #323232;
+  outline: none;
 }
 
 @media only screen and (min-width: 768px) {
@@ -763,9 +777,21 @@
     line-height: 20px;
   }
   .conversation__comment-input {
-    font-family: "AvenirNextRegular";
-    font-size: 13px;
-    line-height: 18px;
+    font-size: 14px;
+    line-height: 22px;
+  }
+  .conversation__button {
+    font-size: 14px;
+    line-height: 22px;
+    width: 160px;
+    -ms-flex-item-align: end;
+        align-self: flex-end;
+  }
+}
+
+@media only screen and (min-width: 1440px) {
+  .conversation {
+    font-family: 'Courier New', Courier, monospace;
   }
 }
 

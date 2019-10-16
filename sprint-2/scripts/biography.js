@@ -1,25 +1,13 @@
-commentObj = {
-    name: '',
-    timestamp: 0,
-    comment: ''
+function commentObj(name, date, comment) {
+    this.name = name;
+    this.date = date;
+    this.comment = comment;
 }
 
-commentAry = [{
-    name: 'Theodore Duncan',
-    date: new Date('11/15/2018'),
-    comment: 'How can someone be so good!!! You can tell he lives for this and loves to do it every day. Everytime I see him I feel instantly happy! He’s deﬁnitely my favorite ever!'
-},
-{
-    name: 'Gary Wong',
-    date: new Date('12/12/2018'),
-    comment: 'Every time I see him shred I feel so motivated to get off my couch and hop on my board. He’s so talented! I wish I can ride like him one day so I can really enjoy myself!'
-},
-{
-    name: 'Michael Lyons',
-    date: new Date('12/18/2018'),
-    comment: 'They BLEW the ROOF off at their last show, once everyone started ﬁguring out they were going. This is still simply the greatest opening of a concert I have EVER witnessed.'
-}
-
+commentAry = [
+    new commentObj('Theodore Duncan', new Date('11/15/2018'), 'How can someone be so good!!! You can tell he lives for this and loves to do it every day. Everytime I see him I feel instantly happy! He’s deﬁnitely my favorite ever!'),
+    new commentObj('Gary Wong', new Date('12/12/2018'), 'Every time I see him shred I feel so motivated to get off my couch and hop on my board. He’s so talented! I wish I can ride like him one day so I can really enjoy myself!'),
+    new commentObj('Michael Lyons', new Date('12/18/2018'), 'They BLEW the ROOF off at their last show, once everyone started ﬁguring out they were going. This is still simply the greatest opening of a concert I have EVER witnessed.')
 ];
 
 function dayFormat(day) {
@@ -57,9 +45,13 @@ function displayComment(entry) {
     comment.setAttribute('class', 'conversation__comment');
 
     //add content
-    name.innerHTML = entry['name'];
-    date.innerHTML = dayFormat(entry['date']);
-    comment.innerHTML = entry['comment'];
+    // name.innerHTML = entry['name'];
+    // date.innerHTML = dayFormat(entry['date']);
+    // comment.innerHTML = entry['comment'];
+
+    name.innerHTML = entry.name;
+    date.innerHTML = dayFormat(entry.date);
+    comment.innerHTML = entry.comment;
 
 
     //append together
@@ -81,7 +73,3 @@ for (let i = 0; i < commentAry.length; i++) {
     displayComment(commentAry[i]);
 
 }
-
-// displayComment(commentAry[0]);
-
-// console.log(commentAry);
