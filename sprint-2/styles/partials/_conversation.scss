@@ -17,8 +17,6 @@
       flex-direction: column;
   }
 
-
-  
   &__post {
       display: flex;
       padding: 24px 0;
@@ -47,8 +45,8 @@
 
   &__image {
     display: flex;
-    height: 40px;
-    width: 40px;
+    height: 38px;
+    width: 38px;
     // background-color: $mercury;
     // border: 1px solid $mercury;
     border-radius: 50%;
@@ -170,13 +168,68 @@
 }
 
 @include tablet {
-  .conversation {
+    .conversation {
+        padding: 48px 3.125vw 40px 3.125vw;
 
-  }
+        &__title {
+            @include desk__h1;
+        }
+
+        &__container {
+            padding: 0 100px;
+        }
+
+        &__image-box {
+            display: flex;
+            width: 60px;
+            // background-color: $mercury;
+        }
+        
+        &__image-box--create {
+            width: 68px;
+        }
+
+        &__text-box {
+            width: 470px;
+        }
+
+        &__text-box--create {
+            width: 462px;
+        }
+
+        &__header {
+            justify-content: flex-start;
+            align-items: baseline;
+        }
+
+        &__name {
+            margin-right: 8px;
+        } 
+
+        &__name--create {
+            @include desk__h5;
+        }
+
+        &__name-input {
+            @include desk__h4-paragraph;
+        }
+
+        &__date {
+            @include desk__h5;
+        }
+
+        &__comment--create {
+            @include desk__h5;
+        }
+
+        &__comment-input {
+            @include mob__h4-paragraph;
+        }
+    }
 }
 
 @include desktop {
-  .conversation {
+    .conversation {
 
-  }
+    }
 }
