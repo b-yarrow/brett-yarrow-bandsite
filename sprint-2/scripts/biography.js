@@ -38,10 +38,6 @@ function displayComment(entry) {
     comment.setAttribute('class', 'conversation__comment');
 
     //add content
-    // name.innerHTML = entry['name'];
-    // date.innerHTML = dayFormat(entry['date']);
-    // comment.innerHTML = entry['comment'];
-
     name.innerHTML = entry.name;
     date.innerHTML = dayFormat(entry.date);
     comment.innerHTML = entry.comment;

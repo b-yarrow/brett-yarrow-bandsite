@@ -1,13 +1,23 @@
 .hero {
   position: relative;
   $hero-height: 183px;
+  $hero-height--shows: 472px;
   height: $hero-height;
+
+  &--shows {
+    height: $hero-height--shows;
+  }
+  
 
   &__image {
     position: absolute;
     width: 100%;
     height: $hero-height;
     z-index: 0;
+    &--shows {
+      height: $hero-height--shows;
+    }
+  
   }
 
   &__overlay {
@@ -17,6 +27,9 @@
     background-color: rgba(23, 23, 23, 0.5);
 
     z-index: 1;
+    &--shows {
+      height: $hero-height--shows;
+    }
   }
 
   &__text {
