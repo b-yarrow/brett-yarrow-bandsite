@@ -21,11 +21,24 @@
 
   &__text {
     display: flex;
+    flex-direction: column;
     position: absolute;
     align-items: center;
     top: 33%;
     margin-left: 16px;
     z-index: 2;
+
+    &--shows {
+      top: 64px;
+    }
+  }
+
+  &__subtitle {
+    display: flex;
+    align-self: flex-start;
+    font-family: "AvenirNextBold";
+    @include mob__h2;
+    color: $white;
   }
 
   &__title {
@@ -33,6 +46,12 @@
     font-size: 24px;
     line-height: 32px;
     color: $white;
+
+    &--shows {
+      width:  288px;
+      font-size: 36px;
+      line-height: 44px;
+    }
   }
 }
 

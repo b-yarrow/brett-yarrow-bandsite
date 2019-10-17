@@ -76,3 +76,29 @@
         }
     }
 }
+
+@include tablet {
+    .shows {
+        padding: 48px 24px;
+
+        &__title {
+            font-family: "AvenirNextBold";
+            @include desk__h1;
+        }
+
+        &__tbl-row {
+            display: table-row;
+            // color: blue;
+            vertical-align: inherit;
+            border-color: inherit;
+        }
+
+        &__heading {
+            display: table-cell;
+            vertical-align: inherit;
+            text-align: left;
+            // color: blue;
+            align-items: inherit;
+        }
+    }
+}
