@@ -2,6 +2,7 @@ function commentObj(name, date, comment) {
     this.name = name;
     this.date = date;
     this.comment = comment;
+    // this.avatar = avatar;
 }
 
 commentAry = [
@@ -9,16 +10,6 @@ commentAry = [
     new commentObj('Gary Wong', new Date('12/12/2018'), 'Every time I see him shred I feel so motivated to get off my couch and hop on my board. He’s so talented! I wish I can ride like him one day so I can really enjoy myself!'),
     new commentObj('Michael Lyons', new Date('12/18/2018'), 'They BLEW the ROOF off at their last show, once everyone started ﬁguring out they were going. This is still simply the greatest opening of a concert I have EVER witnessed.')
 ];
-
-function dayFormat(day) {
-    var dayArray = [];
-
-    dayArray.push((day.getMonth() + 1) < 10 ? '0' + (day.getMonth() + 1) : (day.getMonth() + 1));
-    dayArray.push(day.getDate());
-    dayArray.push(day.getFullYear());
-
-    return dayArray.join('/');
-}
 
 function displayComment(entry) {
     //create comment structure
@@ -73,3 +64,14 @@ for (let i = 0; i < commentAry.length; i++) {
     displayComment(commentAry[i]);
 
 }
+
+const form = document.getElementById('commentForm');
+form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    let userName = e.target.commentName.value;
+    let commentText = e.target.commentText.value;
+    let postComment = new commentObj(userName, new Date(), commentText);
+
+    displayComment(postComment);
+
+})

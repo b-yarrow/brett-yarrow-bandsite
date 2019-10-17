@@ -101,23 +101,26 @@
         <div class="conversation__image-box conversation__image-box--create">
           <img class="conversation__image conversation__image--create" src='./assets/images/Mohan-muruge.jpg'>
         </div>
-        <div class="conversation__text-box conversation__text-box--create">
-          <form class="conversation__name--create">
+        <form class="conversation__name--create" id="commentForm">
+          <div class="conversation__text-box conversation__text-box--create">
+
             <!-- NAME Form & label here -->
             <label for="fname">NAME</label>
-            <input class="conversation__name-input" type="text" id="fname" placeholder="Mohan Muruge">
-          </form>
+            <input class="conversation__name-input" type="text" name="commentName" id="fname"
+              placeholder="Mohan Muruge">
 
-          <div class="conversation__comment conversation__comment--create">
-            <label for="fcomment">COMMENT</label>
-            <textarea class="conversation__comment-input" name="comment" id="fcomment" cols="5" rows="5"
-              placeholder="Add a new comment"></textarea>
 
-            <button class="conversation__button">
-              COMMENT
-            </button>
+            <div class="conversation__comment conversation__comment--create">
+              <label for="fcomment">COMMENT</label>
+              <textarea class="conversation__comment-input" name="commentText" id="fcomment" cols="5" rows="5"
+                placeholder="Add a new comment"></textarea>
+
+              <button class="conversation__button" name="commentButton">
+                COMMENT
+              </button>
+            </div>
           </div>
-        </div>
+        </form>
       </div>
       <div class="conversation__post-container">
         <!-- 
@@ -262,6 +265,7 @@
       </span>
     </p>
   </footer>
+  <script src="./scripts/dayFormat.js"></script>
   <script src="./scripts/biography.js"></script>
 </body>
 
