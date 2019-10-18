@@ -11,8 +11,6 @@ commentAry = [
     new commentObj('Michael Lyons', 'blank.jpg', new Date('12/18/2018'), 'They BLEW the ROOF off at their last show, once everyone started ﬁguring out they were going. This is still simply the greatest opening of a concert I have EVER witnessed.')
 ];
 
-console.log(commentAry);
-
 function displayComment(entry) {
     //create comment structure
     var head = document.getElementsByClassName('conversation__post-container')[0];
@@ -58,10 +56,6 @@ function displayComment(entry) {
     head.appendChild(newPost);
 }
 
-for (let i = 0; i < commentAry.length; i++) {
-    displayComment(commentAry[i]);
-
-}
 
 const form = document.getElementById('commentForm');
 form.addEventListener('submit', (e) => {
@@ -71,7 +65,42 @@ form.addEventListener('submit', (e) => {
     let imgStr = userImage.slice(userImage.lastIndexOf('/') + 1, userImage.length);
     let commentText = e.target.commentText.value;
     let postComment = new commentObj(userName, imgStr, new Date(), commentText);
+    commentAry.push(postComment);
 
-    displayComment(postComment);
+    flushComments();
+    buildComments();
 
-})
+});
+
+function buildComments() {
+
+    for (let i = 0; i < commentAry.length; i++) {
+        displayComment(commentAry[i]);
+    }
+}
+
+
+for (let i = 0; i < commentAry.length; i++) {
+    displayComment(commentAry[i]);
+}
+
+var heade = document.getElementsByClassName('conversation__post-container')[0]
+
+var headeChildren = document.getElementsByClassName('conversation__post-container')[0].childNodes;
+
+// console.log(headeChildren[0]);
+
+function flushComments() {
+    let list = document.getElementsByClassName('conversation__post-container')[0].childNodes;
+    for (let i = list.length - 1; i >= 0; i--) {
+        const element = list[i];
+        if (list[i].nodeType !== 3) {
+            heade.removeChild(list[i]);
+        }
+    }
+}
+
+
+
+
+
