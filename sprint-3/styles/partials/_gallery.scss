@@ -1,0 +1,71 @@
+.gallery {
+  padding: 32px 5vw;
+  background-color: $alabaster;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+
+  &__title {
+    font-family: "AvenirNextBold";
+    font-size: 24px;
+    line-height: 32px;
+    margin-bottom: 24px;
+  }
+  
+  &__image-container {
+    width: 288px;
+    height: auto;
+    align-self: center;
+  }
+  &__image {
+    margin-bottom: 16px;
+    width: 288px;
+    height: 162px;
+
+  }
+}
+
+@include tablet {
+  .gallery {
+    padding: 32px 3.125vw;
+
+    &__title {
+      @include desk__h1;
+    }
+
+    &__image-container {
+      display: flex;
+      flex-flow: wrap;
+      justify-content: space-between;
+      width: 720px;
+      height: 426px;
+      align-content: space-between;
+    }
+
+    &__image {
+      margin: 0;
+      width: 224px;
+      height: 126px;
+    }
+  }
+}
+
+@include desktop {
+  .gallery {
+    padding: 32px 12.5vw;
+
+    &__image-container {
+      display: flex;
+      flex-flow: wrap;
+      justify-content: space-between;
+      width: 1080px;
+      height: 627px;
+      align-content: space-between;
+    }
+
+    &__image {
+      width: 344px;
+      height: 193px;
+    }
+  }
+}

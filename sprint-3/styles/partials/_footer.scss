@@ -1,0 +1,152 @@
+.footer {
+  padding: 48px 5vw;
+  background-color: $black;
+  color: $white;
+  font-family: "AvenirNextRegular";
+  font-weight: 100;
+  font-size: 0.76rem;
+  line-height: 1.14rem;
+
+  &__first-row {
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 32px;
+  }
+  &__title {
+    font-family: "AvenirNextBold";
+    font-size: 36px;
+    line-height: 44px;
+    margin: 0;
+    padding-bottom: 32px;
+  }
+
+  &__icon {
+    margin-right: 32px;
+  }
+
+  &__logo {
+    display: none;
+    float: right;
+  }
+
+  &__second-row {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 0;
+  }
+
+  &__contact {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 40px;
+  }
+
+  &__name {
+    display: flex;
+    flex-direction: column;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 22px;
+    margin-bottom: 24px;
+  }
+
+  &__address {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 32px;
+  }
+
+  &__email {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__copyright {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+@include tablet {
+  .footer {
+    padding: 48px 3.125vw;
+    @include desk__h4-lists-contact;
+
+    &__first-row {
+      flex-direction: row;
+      padding-bottom: 0;
+      justify-content: flex-start;
+      align-items: baseline;
+      margin-bottom: 48px;
+    }
+
+    &__title {
+      width: 224px;
+      margin-right: 24px;
+      padding-bottom: 0;
+    }
+
+    &__icon-group {
+      margin-left: 24px;
+    }
+
+    &__logo {
+      display: inline-block;
+      float: right;
+      margin-top: 8px;
+      width: 120px;
+      height: 24px;
+    }
+
+    &__second-row {
+      flex-direction: row;
+      justify-content: flex-start;
+      margin-bottom: 40px;
+    }
+
+    &__contact {
+      width: 224px;
+      margin-right: 24px;
+      margin-bottom: 0;
+    }
+
+    &__name {
+      @include desk__h3;
+      margin-bottom: 24px;
+    }
+
+    &__address {
+      margin-bottom: 32px;
+    }
+
+    &__copyright {
+      flex-direction: row;
+    }
+  }
+}
+
+@include desktop {
+  .footer {
+    position: relative;
+    padding: 48px 12.5vw;
+
+    &__title {
+      width: 252px;
+    }
+
+    &__icon-group {
+      justify-self: flex-start;
+      margin-left: 0;
+    }
+
+    &__second-row {
+      justify-content: flex-start;
+    }
+
+    &__contact {
+      width: 252px;
+      margin-right: 24px;
+      
+    }
+  }
+}

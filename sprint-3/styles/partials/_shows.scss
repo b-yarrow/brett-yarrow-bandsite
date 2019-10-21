@@ -1,0 +1,136 @@
+.shows {
+    padding: 32px 16px;
+    &__title {
+        font-family: "AvenirNextBold";
+        font-size: 24px;
+        line-height: 32px;
+        margin-bottom: 12px;
+    }
+
+    &__table {
+        width: 100%;
+    }
+
+    &__tbl-row {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
+    &__heading {
+        display: flex;
+        align-items: flex-start;
+        @include mob__h5;
+        text-transform: uppercase;
+        margin-top: 24px;
+        margin-bottom: 16px;
+    }
+
+    &__date {
+        font-family: "AvenirNextDemiBold";
+        @include mob__h2;
+        // margin-bottom: 24px;
+    }
+
+
+    &__venue, &__location {
+        font-family: "AvenirNextRegular";
+        @include mob__h4-paragraph;
+        // margin-bottom: 24px;
+    }
+
+    &__location {
+        margin-bottom: 32px;
+    }
+
+    
+
+    &__button-box {
+        display: flex;
+        justify-content: center;
+        
+        &--mobile {
+            border-bottom: 1px solid $mercury;
+            padding-bottom: 16px;
+        }
+    }
+
+    &__button {
+        @include mob__h4-paragraph;
+        font-family: "AvenirNextDemiBold";
+        display: flex;
+        justify-content: center;
+
+        height: 48px;
+        width: 100%;
+        border-radius: 4px;
+        background-color: $black;
+        border: none;
+        color: $white;
+        
+
+        &:hover{
+            border: 2px solid $black;
+            background-color: #000000;
+            outline: none;
+        }
+
+        &:focus {
+            border: 2px solid $black;
+            outline: none;
+        }
+
+        &:active {
+            border: 2px solid $black;
+            outline: none;
+        }
+    }
+}
+
+@include tablet {
+    .shows {
+        padding: 48px 24px;
+
+        &__title {
+            font-family: "AvenirNextBold";
+            @include desk__h1;
+        }
+
+        &__tbl-row {
+            display: table-row;
+            // color: blue;
+            vertical-align: inherit;
+            border-color: inherit;
+        }
+
+        &__date, &__venue, &__location, &__button-box {
+            padding-top: 16px;
+            padding-bottom: 16px;
+            border-bottom: 1px solid $mercury;
+        }
+
+        &__heading {
+            display: table-cell;
+            vertical-align: inherit;
+            text-align: left;
+            // color: blue;
+            align-items: inherit;
+        }
+    }
+}
+
+@include desktop {
+    .shows {
+        display: flex;
+        justify-content: space-between;
+        padding: 48px 180px;
+
+
+        &__table {
+            width: 804px;
+        }
+
+        &__button {
+            width: 160px;
+        }
+    }
+}
