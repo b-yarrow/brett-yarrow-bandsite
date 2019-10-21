@@ -278,10 +278,26 @@
     margin-left: 180px;
     top: 35%;
   }
+  .hero__text--shows {
+    top: 160px;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+  }
   .hero__title {
     font-family: "AvenirNextBold";
     font-size: 60px;
     line-height: 68px;
+    margin-bottom: 0;
+  }
+  .hero__soundcloud {
+    width: 436px;
+    height: 146px;
+    margin-left: 64px;
+    margin-bottom: 18px;
+    -ms-flex-item-align: end;
+        align-self: flex-end;
   }
 }
 
@@ -1198,9 +1214,6 @@
     vertical-align: inherit;
     border-color: inherit;
   }
-  .shows__tbl-row--desk {
-    border-bottom: 1px solid lawngreen;
-  }
   .shows__date, .shows__venue, .shows__location, .shows__button-box {
     padding-top: 16px;
     padding-bottom: 16px;
@@ -1213,6 +1226,24 @@
     -webkit-box-align: inherit;
         -ms-flex-align: inherit;
             align-items: inherit;
+  }
+}
+
+@media only screen and (min-width: 1440px) {
+  .shows {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    padding: 48px 180px;
+  }
+  .shows__table {
+    width: 804px;
+  }
+  .shows__button {
+    width: 160px;
   }
 }
 

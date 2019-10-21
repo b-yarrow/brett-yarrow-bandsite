@@ -95,21 +95,11 @@
             @include desk__h1;
         }
 
-        &__table {
-
-        }
-
         &__tbl-row {
             display: table-row;
             // color: blue;
             vertical-align: inherit;
             border-color: inherit;
-
-            &--desk{
-                 
-                border-bottom: 1px solid lawngreen;
-                // padding-bottom: 16px;
-            }
         }
 
         &__date, &__venue, &__location, &__button-box {
@@ -124,6 +114,23 @@
             text-align: left;
             // color: blue;
             align-items: inherit;
+        }
+    }
+}
+
+@include desktop {
+    .shows {
+        display: flex;
+        justify-content: space-between;
+        padding: 48px 180px;
+
+
+        &__table {
+            width: 804px;
+        }
+
+        &__button {
+            width: 160px;
         }
     }
 }

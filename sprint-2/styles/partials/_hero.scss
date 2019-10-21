@@ -150,10 +150,28 @@
     &__text {
       margin-left: 180px;
       top: 35%;
+
+      &--shows {
+        top: 160px;
+        flex-direction: row;
+      }
     }
 
     &__title {
       @include desk__hero-header;
+      margin-bottom: 0;
     }
+
+    &__soundcloud {
+      width: 436px;
+      height: 146px;
+      margin-left: 64px;
+      margin-bottom: 18px;
+      align-self: flex-end;
+    }
+
+
+
+
   }
 }
