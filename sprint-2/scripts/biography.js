@@ -69,6 +69,9 @@ form.addEventListener('submit', (e) => {
 
     flushComments();
     buildComments();
+    // clear the name and comment fields
+    e.target.commentName.value = '';
+    e.target.commentText.value = '';
 
 });
 
@@ -91,11 +94,12 @@ var headeChildren = document.getElementsByClassName('conversation__post-containe
 // console.log(headeChildren[0]);
 
 function flushComments() {
+    let postContainer = document.getElementsByClassName('conversation__post-container')[0];
     let list = document.getElementsByClassName('conversation__post-container')[0].childNodes;
     for (let i = list.length - 1; i >= 0; i--) {
         const element = list[i];
         if (list[i].nodeType !== 3) {
-            heade.removeChild(list[i]);
+            postContainer.removeChild(list[i]);
         }
     }
 }
