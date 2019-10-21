@@ -1,3 +1,4 @@
+// Comment Object prototype, to make adding new objects easier
 function commentObj(name, avatar, date, comment) {
     this.name = name;
     this.avatar = avatar;
@@ -5,12 +6,17 @@ function commentObj(name, avatar, date, comment) {
     this.comment = comment;
 }
 
+//Array of comments, first 3 already exist, and additional ones posted will be pushed to the end
 commentAry = [
     new commentObj('Theodore Duncan', 'blank.jpg', new Date('11/15/2018'), 'How can someone be so good!!! You can tell he lives for this and loves to do it every day. Everytime I see him I feel instantly happy! He’s deﬁnitely my favorite ever!'),
     new commentObj('Gary Wong', 'blank.jpg', new Date('12/12/2018'), 'Every time I see him shred I feel so motivated to get off my couch and hop on my board. He’s so talented! I wish I can ride like him one day so I can really enjoy myself!'),
     new commentObj('Michael Lyons', 'blank.jpg', new Date('12/18/2018'), 'They BLEW the ROOF off at their last show, once everyone started ﬁguring out they were going. This is still simply the greatest opening of a concert I have EVER witnessed.')
 ];
-
+/**
+ * displayComment builds a new comment block, creates all needed html element, assigns classes
+ * and appends them together.
+ * @param {*} entry - a comment object
+ */
 function displayComment(entry) {
     //create comment structure
     var head = document.getElementsByClassName('conversation__post-container')[0];
@@ -56,7 +62,11 @@ function displayComment(entry) {
     head.appendChild(newPost);
 }
 
-
+/**
+ * form event listener, gets data from forms, adds new entry to comment array, deletes the 
+ * html comments from the page, then rebuilds the entire list of comments.  Finally clears
+ * the form fields
+ */
 const form = document.getElementById('commentForm');
 form.addEventListener('submit', (e) => {
     e.preventDefault();
@@ -75,29 +85,27 @@ form.addEventListener('submit', (e) => {
 
 });
 
+
+/**
+ * Builds the stored comments posted in the comments array
+ */
 function buildComments() {
 
     for (let i = 0; i < commentAry.length; i++) {
         displayComment(commentAry[i]);
     }
 }
-
-
+// Builds comments on initial page load
 for (let i = 0; i < commentAry.length; i++) {
     displayComment(commentAry[i]);
 }
 
-var heade = document.getElementsByClassName('conversation__post-container')[0]
 
-var headeChildren = document.getElementsByClassName('conversation__post-container')[0].childNodes;
-
-// console.log(headeChildren[0]);
-
+//clears all comments from the page
 function flushComments() {
     let postContainer = document.getElementsByClassName('conversation__post-container')[0];
     let list = document.getElementsByClassName('conversation__post-container')[0].childNodes;
     for (let i = list.length - 1; i >= 0; i--) {
-        const element = list[i];
         if (list[i].nodeType !== 3) {
             postContainer.removeChild(list[i]);
         }
