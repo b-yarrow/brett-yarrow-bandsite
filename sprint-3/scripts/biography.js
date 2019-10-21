@@ -1,17 +1,15 @@
 // Comment Object prototype, to make adding new objects easier
-function commentObj(name, avatar, date, comment) {
+function commentObj(name, comment, id, likes, timestamp) {
     this.name = name;
-    this.avatar = avatar;
-    this.date = date;
     this.comment = comment;
+    this.id = id;
+    this.likes = likes;
+    this.timestamp = timestamp;
 }
 
-//Array of comments, first 3 already exist, and additional ones posted will be pushed to the end
-commentAry = [
-    new commentObj('Theodore Duncan', 'blank.jpg', new Date('11/15/2018'), 'How can someone be so good!!! You can tell he lives for this and loves to do it every day. Everytime I see him I feel instantly happy! He’s deﬁnitely my favorite ever!'),
-    new commentObj('Gary Wong', 'blank.jpg', new Date('12/12/2018'), 'Every time I see him shred I feel so motivated to get off my couch and hop on my board. He’s so talented! I wish I can ride like him one day so I can really enjoy myself!'),
-    new commentObj('Michael Lyons', 'blank.jpg', new Date('12/18/2018'), 'They BLEW the ROOF off at their last show, once everyone started ﬁguring out they were going. This is still simply the greatest opening of a concert I have EVER witnessed.')
-];
+//Array of comments, will be populated with api server data
+commentAry = [];
+
 /**
  * displayComment builds a new comment block, creates all needed html element, assigns classes
  * and appends them together.
@@ -34,7 +32,8 @@ function displayComment(entry) {
     newPost.setAttribute('class', 'conversation__post');
     imgBox.setAttribute('class', 'conversation__image-box');
     img.setAttribute('class', 'conversation__image');
-    img.setAttribute('src', './assets/images/' + entry.avatar);
+    // img.setAttribute('src', './assets/images/' + entry.avatar);
+    img.setAttribute('src', './assets/images/blank.jpg');
     textBox.setAttribute('class', 'conversation__text-box');
     header.setAttribute('class', 'conversation__header');
     name.setAttribute('class', 'conversation__name');
@@ -43,7 +42,7 @@ function displayComment(entry) {
 
     //add content
     name.innerHTML = entry.name;
-    date.innerHTML = dayFormat(entry.date);
+    date.innerHTML = dayFormat(entry.timestamp);
     comment.innerHTML = entry.comment;
 
 
@@ -71,10 +70,10 @@ const form = document.getElementById('commentForm');
 form.addEventListener('submit', (e) => {
     e.preventDefault();
     let userName = e.target.commentName.value;
-    let userImage = document.getElementsByClassName('conversation__image--create')[0].getAttribute('src');
-    let imgStr = userImage.slice(userImage.lastIndexOf('/') + 1, userImage.length);
+    // let userImage = document.getElementsByClassName('conversation__image--create')[0].getAttribute('src');
+    // let imgStr = userImage.slice(userImage.lastIndexOf('/') + 1, userImage.length);
     let commentText = e.target.commentText.value;
-    let postComment = new commentObj(userName, imgStr, new Date(), commentText);
+    let postComment = new commentObj(userName, commentText, apiKey, 0, new Date().getTime());
     commentAry.push(postComment);
 
     flushComments();
@@ -95,11 +94,6 @@ function buildComments() {
         displayComment(commentAry[i]);
     }
 }
-// Builds comments on initial page load
-for (let i = 0; i < commentAry.length; i++) {
-    displayComment(commentAry[i]);
-}
-
 
 //clears all comments from the page
 function flushComments() {
@@ -111,6 +105,30 @@ function flushComments() {
         }
     }
 }
+
+
+function doApiStuffs(data) {
+    commentAry = data;
+
+    for (let i = 0; i < commentAry.length; i++) {
+        displayComment(commentAry[i]);
+    }
+}
+
+// Builds comments on initial page load
+
+var apiStuff;
+
+axios.get('https://project-1-api.herokuapp.com/comments' + apiString).then(response => { doApiStuffs(response.data) });
+
+// console.log(apiStuff);
+
+// for (let i = 0; i < commentAry.length; i++) {
+//     displayComment(commentAry[i]);
+// }
+
+
+
 
 
 
