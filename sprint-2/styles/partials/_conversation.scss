@@ -9,7 +9,7 @@
     font-family: "AvenirNextBold";
     font-size: 24px;
     line-height: 32px;
-    margin-bottom: 24px;
+    margin-bottom: 40px;
   }
   
   &__container {
@@ -31,6 +31,8 @@
 
   &__post--create {
       justify-content: space-between;
+      padding-top: 0px;
+      padding-bottom: 32px;
   }
 
   &__image-box {

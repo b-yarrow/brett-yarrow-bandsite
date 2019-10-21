@@ -34,7 +34,7 @@
 
 .header__logo {
   display: block;
-  height: 50%;
+  height: 100%;
   padding: 8px 0;
 }
 
@@ -527,7 +527,7 @@
   font-family: "AvenirNextBold";
   font-size: 24px;
   line-height: 32px;
-  margin-bottom: 24px;
+  margin-bottom: 40px;
 }
 
 .conversation__container {
@@ -562,6 +562,8 @@
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  padding-top: 0px;
+  padding-bottom: 32px;
 }
 
 .conversation__image-box {
