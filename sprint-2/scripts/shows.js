@@ -102,7 +102,7 @@ function displayTable(table, shows) {
             cell.appendChild(text);
         }
         let cell = row.insertCell();
-
+        cell.setAttribute('class', 'shows__button-box');
         let button = document.createElement('button');
         button.setAttribute('class', 'shows__button');
         button.innerHTML = 'BUY TICKETS';

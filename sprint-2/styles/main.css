@@ -208,19 +208,50 @@
   .hero {
     height: 400px;
   }
+  .hero--shows {
+    height: 670px;
+  }
   .hero__image {
     height: 400px;
+  }
+  .hero__image--shows {
+    height: 670px;
   }
   .hero__overlay {
     height: 400px;
   }
+  .hero__overlay--shows {
+    height: 670px;
+  }
   .hero__text {
     margin-left: 24px;
+  }
+  .hero__text--shows {
+    top: 15%;
+  }
+  .hero__subtitle {
+    font-family: "AvenirNextBold";
+    font-size: 24px;
+    line-height: 32px;
+    margin-bottom: 32px;
   }
   .hero__title {
     font-family: "AvenirNextBold";
     font-size: 60px;
     line-height: 68px;
+  }
+  .hero__title--shows {
+    width: 560px;
+  }
+  .hero__soundcloud {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-item-align: start;
+        align-self: flex-start;
+    height: 120px;
+    width: 440px;
+    left: 24px;
   }
 }
 
@@ -228,10 +259,19 @@
   .hero {
     height: 670px;
   }
+  .hero--shows {
+    height: 670px;
+  }
   .hero__image {
     height: 670px;
   }
+  .hero__image--shows {
+    height: 670px;
+  }
   .hero__overlay {
+    height: 670px;
+  }
+  .hero__overlay--shows {
     height: 670px;
   }
   .hero__text {
@@ -1157,6 +1197,14 @@
     display: table-row;
     vertical-align: inherit;
     border-color: inherit;
+  }
+  .shows__tbl-row--desk {
+    border-bottom: 1px solid lawngreen;
+  }
+  .shows__date, .shows__venue, .shows__location, .shows__button-box {
+    padding-top: 16px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid #e1e1e1;
   }
   .shows__heading {
     display: table-cell;

@@ -73,21 +73,52 @@
   .hero {
     $hero-height: 400px;
     height: $hero-height;
+    $hero-height--shows: 670px;
+
+    &--shows {
+        height: $hero-height--shows;
+      }
+
 
     &__image {
       height: $hero-height;
+      &--shows {
+        height: $hero-height--shows;
+      }
     }
 
     &__overlay {
       height: $hero-height;
+      &--shows {
+        height: $hero-height--shows;
+      }
     }
 
     &__text {
       margin-left: 24px;
+      &--shows {
+        top: 15%;
+      }
+    }
+
+    &__subtitle {
+      @include desk__h2;
+      margin-bottom: 32px;
     }
 
     &__title {
       @include desk__hero-header;
+      &--shows {
+        width: 560px;
+      }
+    }
+
+    &__soundcloud {
+      display: flex;
+      align-self: flex-start;
+      height: 120px;
+      width: 440px;
+      left: 24px;
     }
   }
 }
@@ -95,15 +126,25 @@
 @include desktop {
   .hero {
     $hero-height: 670px;
+    $hero-height--shows: 670px;
 
     height: $hero-height;
+    &--shows {
+      height: $hero-height--shows;
+    }
 
     &__image {
       height: $hero-height;
+      &--shows {
+        height: $hero-height--shows;
+      }
     }
 
     &__overlay {
       height: $hero-height;
+      &--shows {
+        height: $hero-height--shows;
+      }
     }
 
     &__text {

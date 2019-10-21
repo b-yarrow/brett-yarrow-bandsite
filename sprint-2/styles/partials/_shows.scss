@@ -95,11 +95,27 @@
             @include desk__h1;
         }
 
+        &__table {
+
+        }
+
         &__tbl-row {
             display: table-row;
             // color: blue;
             vertical-align: inherit;
             border-color: inherit;
+
+            &--desk{
+                 
+                border-bottom: 1px solid lawngreen;
+                // padding-bottom: 16px;
+            }
+        }
+
+        &__date, &__venue, &__location, &__button-box {
+            padding-top: 16px;
+            padding-bottom: 16px;
+            border-bottom: 1px solid $mercury;
         }
 
         &__heading {
