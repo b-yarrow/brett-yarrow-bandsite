@@ -73,14 +73,21 @@ form.addEventListener('submit', (e) => {
     // let userImage = document.getElementsByClassName('conversation__image--create')[0].getAttribute('src');
     // let imgStr = userImage.slice(userImage.lastIndexOf('/') + 1, userImage.length);
     let commentText = e.target.commentText.value;
-    let postComment = new commentObj(userName, commentText, apiKey, 0, new Date().getTime());
-    commentAry.push(postComment);
+    // let postComment = new commentObj(userName, commentText, apiKey, 0, new Date().getTime());
 
-    flushComments();
-    buildComments();
-    // clear the name and comment fields
-    e.target.commentName.value = '';
-    e.target.commentText.value = '';
+    axios.post('https://project-1-api.herokuapp.com/comments' + apiString, { name: userName, comment: commentText })
+        .then(response => {
+
+
+            commentAry.push(response.data);
+
+            flushComments();
+            buildComments();
+
+            e.target.commentName.value = '';
+            e.target.commentText.value = '';
+
+        });
 
 });
 
