@@ -114,25 +114,17 @@ function flushComments() {
 }
 
 
-function doApiStuffs(data) {
-    commentAry = data;
+
+// Builds comments on initial page load
+axios.get('https://project-1-api.herokuapp.com/comments' + apiString).then(response => {
+    commentAry = response.data;
 
     for (let i = 0; i < commentAry.length; i++) {
         displayComment(commentAry[i]);
     }
-}
+});
 
-// Builds comments on initial page load
 
-var apiStuff;
-
-axios.get('https://project-1-api.herokuapp.com/comments' + apiString).then(response => { doApiStuffs(response.data) });
-
-// console.log(apiStuff);
-
-// for (let i = 0; i < commentAry.length; i++) {
-//     displayComment(commentAry[i]);
-// }
 
 
 
