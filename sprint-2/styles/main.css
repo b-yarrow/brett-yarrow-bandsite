@@ -201,6 +201,7 @@
   width: 288px;
   font-size: 36px;
   line-height: 44px;
+  margin-bottom: 64px;
 }
 
 @media only screen and (min-width: 768px) {
@@ -1035,11 +1036,15 @@
   }
 }
 
+.shows {
+  padding: 32px 16px;
+}
+
 .shows__title {
   font-family: "AvenirNextBold";
   font-size: 24px;
   line-height: 32px;
-  margin-bottom: 24px;
+  margin-bottom: 12px;
 }
 
 .shows__table {
@@ -1069,6 +1074,8 @@
   font-family: "AvenirNextRegular";
   color: #afafaf;
   text-transform: uppercase;
+  margin-top: 24px;
+  margin-bottom: 16px;
 }
 
 .shows__date {
@@ -1084,6 +1091,10 @@
   line-height: 18px;
 }
 
+.shows__location {
+  margin-bottom: 32px;
+}
+
 .shows__button-box {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1095,6 +1106,7 @@
 
 .shows__button-box--mobile {
   border-bottom: 1px solid #e1e1e1;
+  padding-bottom: 16px;
 }
 
 .shows__button {
