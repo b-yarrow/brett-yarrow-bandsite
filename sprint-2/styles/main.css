@@ -518,12 +518,17 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  -webkit-box-align: start;
-      -ms-flex-align: start;
-          align-items: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .conversation__title {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-item-align: start;
+      align-self: flex-start;
   font-family: "AvenirNextBold";
   font-size: 24px;
   line-height: 32px;
@@ -832,7 +837,7 @@
 
 @media only screen and (min-width: 1440px) {
   .conversation {
-    font-family: 'Courier New', Courier, monospace;
+    padding: 48px 180px 40px 180px;
   }
 }
 

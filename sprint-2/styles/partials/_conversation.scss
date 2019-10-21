@@ -3,13 +3,16 @@
 //   background-color: $alabaster;
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: center;
 
   &__title {
+    display: flex;
+    align-self: flex-start;
     font-family: "AvenirNextBold";
     font-size: 24px;
     line-height: 32px;
     margin-bottom: 40px;
+
   }
   
   &__container {
@@ -251,6 +254,6 @@
 
 @include desktop {
     .conversation {
-        font-family: 'Courier New', Courier, monospace;
+        padding: 48px 180px 40px 180px;
     }
 }
