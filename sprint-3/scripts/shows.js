@@ -1,17 +1,10 @@
 // GLOBAL VARIABLES & ARRAYS
 
 //array containting all event data
-var shows = [
-    { date: new Date('Mon Dec 17 2018'), venue: 'Ronald Lane', location: 'San Fancisco, CA' },
-    { date: new Date('Tue Jul 18 2019'), venue: 'Pier 3 East', location: 'San Fancisco, CA' },
-    { date: new Date('Fri Jul 22 2019'), venue: 'View Loungue', location: 'San Fancisco, CA' },
-    { date: new Date('Sat Aug 12 2019'), venue: 'Hyatt Agency', location: 'San Fancisco, CA' },
-    { date: new Date('Fri Sep 05 2019'), venue: 'Moscow Center', location: 'San Fancisco, CA' },
-    { date: new Date('Wed Aug 11 2019'), venue: 'Pres Club', location: 'San Fancisco, CA' }
-];
+var shows = [];
 
 var viewportWidth;  // var storing width of browser window
-var table           // var for HTML table element
+var table;           // var for HTML table element
 var sizedMobile;    // var for tracking if window is in mobile size range (< 768px )
 
 // FUNCTION DECLARATIONS //
@@ -47,35 +40,73 @@ function displayTableMobile(table, shows) {
     for (let show of shows) {
 
         // loop for each key 
-        for (let i = 0; i < showKeys.length; i++) {
 
-            // add row to table and assign class
-            let row = table.insertRow();
-            row.setAttribute('class', 'shows__tbl-row');
 
-            // add table heading element, assign class and create text object from key array
-            let th = document.createElement('th');
-            th.setAttribute('class', 'shows__heading');
-            let label = document.createTextNode(showKeys[i]);
-
-            // add table data element, assign classes and data depending on number
-            let td = document.createElement('td');
-            td.setAttribute('class', 'shows__' + showKeys[i]);
-            if (i === 0) {
-                td.innerHTML = dayFormatLong(show[showKeys[i]]);
-            } else {
-                td.innerHTML = show[showKeys[i]];
-            }
-            // append elements together
-            th.appendChild(label);
-
-            row.appendChild(th);
-            row.appendChild(td);
-        }
-        // create button object
+        // add row to table and assign class
         let row = table.insertRow();
         row.setAttribute('class', 'shows__tbl-row');
+
+        // add table heading element, assign class and create text object from key array
+        let th = document.createElement('th');
+        th.setAttribute('class', 'shows__heading');
+        let label = document.createTextNode('date');
+
+        // add table data element, assign classes and data depending on number
         let td = document.createElement('td');
+        td.setAttribute('class', 'shows__date');
+        td.innerHTML = dayFormatLong(show.date);
+
+        // append elements together
+        th.appendChild(label);
+
+        row.appendChild(th);
+        row.appendChild(td);
+
+        // add row to table and assign class
+        row = table.insertRow();
+        row.setAttribute('class', 'shows__tbl-row');
+
+        // add table heading element, assign class and create text object from key array
+        th = document.createElement('th');
+        th.setAttribute('class', 'shows__heading');
+        label = document.createTextNode('venue');
+
+        // add table data element, assign classes and data depending on number
+        td = document.createElement('td');
+        td.setAttribute('class', 'shows__venue');
+
+        td.innerHTML = show.place;
+        // append elements together
+        th.appendChild(label);
+
+        row.appendChild(th);
+        row.appendChild(td);
+
+        // add row to table and assign class
+        row = table.insertRow();
+        row.setAttribute('class', 'shows__tbl-row');
+
+        // add table heading element, assign class and create text object from key array
+        th = document.createElement('th');
+        th.setAttribute('class', 'shows__heading');
+        label = document.createTextNode('location');
+
+        // add table data element, assign classes and data depending on number
+        td = document.createElement('td');
+        td.setAttribute('class', 'shows__location');
+
+        td.innerHTML = show.location;
+        // append elements together
+        th.appendChild(label);
+
+        row.appendChild(th);
+        row.appendChild(td);
+
+
+        // create button object
+        row = table.insertRow();
+        row.setAttribute('class', 'shows__tbl-row');
+        td = document.createElement('td');
         td.setAttribute('class', 'shows__button-box shows__button-box--mobile');
         let button = document.createElement('button');
         button.setAttribute('class', 'shows__button');
@@ -98,44 +129,67 @@ function displayTable(table, shows) {
     let tHead = table.createTHead();
     let row = tHead.insertRow();
     row.setAttribute('class', 'shows__tbl-row');
-    for (let key of showKeys) {
-        let th = document.createElement('th');
-        th.setAttribute('class', 'shows__heading');
-        let text = '';
-        if (key === 'date') {
-            text = document.createTextNode('dates');
-        } else {
-            text = document.createTextNode(key);
-        }
 
-        th.appendChild(text);
-        row.appendChild(th);
-    }
+    let th = document.createElement('th');
+    th.setAttribute('class', 'shows__heading');
+    let text = document.createTextNode('dates');
+
+    th.appendChild(text);
+    row.appendChild(th);
+
+    th = document.createElement('th');
+    th.setAttribute('class', 'shows__heading');
+    text = document.createTextNode('venue');
+
+    th.appendChild(text);
+    row.appendChild(th);
+
+    th = document.createElement('th');
+    th.setAttribute('class', 'shows__heading');
+    text = document.createTextNode('location');
+
+    th.appendChild(text);
+    row.appendChild(th);
+
 
     // create individual shows with the show object data
     let tBody = table.createTBody();
     for (let show of shows) {
-        let row = tBody.insertRow();
+
+        row = tBody.insertRow();
         row.setAttribute('class', 'shows__tbl-row shows__tbl-row--desk');
-        for (let key in show) {
-            let cell = row.insertCell();
-            cell.setAttribute('class', 'shows__' + key);
-            let text = '';
-            if (key === 'date') {
-                text = document.createTextNode(dayFormatLong(show[key]));
-            } else {
-                text = document.createTextNode(show[key]);
-            }
-            cell.appendChild(text);
-        }
-        // create button object
+
         let cell = row.insertCell();
+        cell.setAttribute('class', 'shows__date');
+
+        text = document.createTextNode(show.date);
+        cell.appendChild(text);
+
+
+        row.setAttribute('class', 'shows__tbl-row shows__tbl-row--desk');
+
+        cell = row.insertCell();
+        cell.setAttribute('class', 'shows__venue');
+
+        text = document.createTextNode(show.place);
+        cell.appendChild(text);
+
+
+        row.setAttribute('class', 'shows__tbl-row shows__tbl-row--desk');
+
+        cell = row.insertCell();
+        cell.setAttribute('class', 'shows__location');
+
+        text = document.createTextNode(show.location);
+        cell.appendChild(text);
+
+        // create button object
+        cell = row.insertCell();
         cell.setAttribute('class', 'shows__button-box');
         let button = document.createElement('button');
         button.setAttribute('class', 'shows__button');
         button.innerHTML = 'BUY TICKETS';
         cell.appendChild(button);
-
     }
 }
 
@@ -144,14 +198,23 @@ function displayTable(table, shows) {
 viewportWidth = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
 table = document.querySelector('table');
 
-// CHeck browser window size and build appropriate table
-if (viewportWidth < 768) {
-    sizedMobile = true;
-    displayTableMobile(table, shows);
-} else {
-    displayTable(table, shows);
-    sizedMobile = false;
-}
+//fetch data from API
+
+axios.get('https://project-1-api.herokuapp.com/showdates' + apiString)
+    .then(response => {
+        shows = response.data;
+
+        // CHeck browser window size and build appropriate table
+        if (viewportWidth < 768) {
+            sizedMobile = true;
+            displayTableMobile(table, shows);
+        } else {
+            displayTable(table, shows);
+            sizedMobile = false;
+        }
+    });
+
+
 
 /**
  * addEvent will reload the page and build a new table if the window has been resized below

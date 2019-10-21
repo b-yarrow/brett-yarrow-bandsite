@@ -1,7 +1,6 @@
 function dayFormat(dayMilli) {
     let dayArray = [];
     let day = new Date(dayMilli);
-    console.log(day);
 
     // dayArray.push((day.getMonth() + 1) < 10 ? '0' + (day.getMonth() + 1) : (day.getMonth() + 1));
     dayArray.push((day.getMonth() + 1));
