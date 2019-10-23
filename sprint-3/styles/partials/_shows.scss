@@ -23,6 +23,15 @@
         text-transform: uppercase;
         margin-top: 24px;
         margin-bottom: 16px;
+        font-weight: bold;
+
+        &--desk {
+            display: none;
+        }
+
+        &--mobile {
+            display: flex;
+        }
     }
 
     &__date {
@@ -114,6 +123,11 @@
             text-align: left;
             // color: blue;
             align-items: inherit;
+            
+            &--mobile {
+                display: none;
+            }
+
         }
     }
 }

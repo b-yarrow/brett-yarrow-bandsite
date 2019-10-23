@@ -159,27 +159,27 @@ function displayTable(table, shows) {
     row.setAttribute('class', 'shows__tbl-row');
 
     let th = document.createElement('th');
-    th.setAttribute('class', 'shows__heading shows__heading--desk');
+    th.setAttribute('class', 'shows__heading');
     let text = document.createTextNode('dates');
 
     th.appendChild(text);
     row.appendChild(th);
 
     th = document.createElement('th');
-    th.setAttribute('class', 'shows__heading shows__heading--desk');
+    th.setAttribute('class', 'shows__heading');
     text = document.createTextNode('venue');
 
     th.appendChild(text);
     row.appendChild(th);
 
     th = document.createElement('th');
-    th.setAttribute('class', 'shows__heading shows__heading--desk');
+    th.setAttribute('class', 'shows__heading');
     text = document.createTextNode('location');
 
     th.appendChild(text);
     row.appendChild(th);
 
-    let cell;
+
     // create individual shows with the show object data
     let tBody = table.createTBody();
     for (let show of shows) {
@@ -187,13 +187,9 @@ function displayTable(table, shows) {
         row = tBody.insertRow();
         row.setAttribute('class', 'shows__tbl-row shows__tbl-row--desk');
 
-        cell = row.insertCell();
-        cell.setAttribute('class', 'shows__heading shows__heading--mobile');
-        text = document.createTextNode('date');
-        cell.appendChild(text);
-
-        cell = row.insertCell();
+        let cell = row.insertCell();
         cell.setAttribute('class', 'shows__date');
+
         text = document.createTextNode(show.date);
         cell.appendChild(text);
 
@@ -201,12 +197,8 @@ function displayTable(table, shows) {
         row.setAttribute('class', 'shows__tbl-row shows__tbl-row--desk');
 
         cell = row.insertCell();
-        cell.setAttribute('class', 'shows__heading shows__heading--mobile');
-        text = document.createTextNode('venue');
-        cell.appendChild(text);
-
-        cell = row.insertCell();
         cell.setAttribute('class', 'shows__venue');
+
         text = document.createTextNode(show.place);
         cell.appendChild(text);
 
@@ -214,12 +206,8 @@ function displayTable(table, shows) {
         row.setAttribute('class', 'shows__tbl-row shows__tbl-row--desk');
 
         cell = row.insertCell();
-        cell.setAttribute('class', 'shows__heading shows__heading--mobile');
-        text = document.createTextNode('location');
-        cell.appendChild(text);
-
-        cell = row.insertCell();
         cell.setAttribute('class', 'shows__location');
+
         text = document.createTextNode(show.location);
         cell.appendChild(text);
 
@@ -247,8 +235,7 @@ axios.get('https://project-1-api.herokuapp.com/showdates' + apiString)
         // CHeck browser window size and build appropriate table
         if (viewportWidth < 768) {
             sizedMobile = true;
-            // displayTableMobile(table, shows);
-            displayTable(table, shows);
+            displayTableMobile(table, shows);
         } else {
             displayTable(table, shows);
             sizedMobile = false;
