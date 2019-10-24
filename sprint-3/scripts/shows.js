@@ -1,11 +1,10 @@
 // GLOBAL VARIABLES & ARRAYS
 
-//array containting all event data
-var shows = [];
 
-var viewportWidth;  // var storing width of browser window
-var table;           // var for HTML table element
-var sizedMobile;    // var for tracking if window is in mobile size range (< 768px )
+var shows = [];         //array containing all event data
+var viewportWidth;      // var storing width of browser window
+var table;              // var for HTML table element
+var sizedMobile;        // var for tracking if window is in mobile size range (< 768px )
 
 // FUNCTION DECLARATIONS //
 
@@ -28,6 +27,8 @@ var addEvent = function (object, type, callback) {
         object["on" + type] = callback;
     }
 };
+
+
 /**
  * displayTableMobile Builds an HTML table using the provided shows array, mobile version.
  * @param {*} table the HTML table element
