@@ -1169,6 +1169,8 @@
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  border-bottom: 1px solid #e1e1e1;
+  padding-bottom: 16px;
 }
 
 .shows__button-box--mobile {
