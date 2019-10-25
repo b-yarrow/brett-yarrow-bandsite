@@ -189,7 +189,12 @@
         margin-top: 16px;
     }
 
-    &__like, &__delete {
+    &__like-container{
+        display: flex;
+        align-items: center;
+    }
+
+    &__delete {
         // width: 12px;
         // height: 12px;
         border: 1px solid $mercury;
@@ -197,7 +202,7 @@
         border-radius: 2px;
         background-color: $white;
         // box-shadow: 0 40px 32px -4px #000000;
-        font-style: italic;
+        // font-style: italic;
         
 
         &:hover {
@@ -205,6 +210,17 @@
             background-color: $black;
             color: $white;
             outline: none;
+        }
+    }
+
+    &__like {
+        border: none;
+        color: $silver;
+        background-color: $white;
+        
+
+        &:hover{
+            color: $black;
         }
     }
 

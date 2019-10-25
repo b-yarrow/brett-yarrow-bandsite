@@ -58,7 +58,7 @@ function displayComment(entry) {
     // date.innerHTML = dayFormat(entry.timestamp);
     comment.innerHTML = entry.comment;
 
-    likeBtn.innerHTML = 'like';
+    likeBtn.innerHTML = `<i class="material-icons md-18">thumb_up</i>`;
     likeValue.innerHTML = entry.likes;
     deleteBtn.innerHTML = 'delete';
 
@@ -129,10 +129,6 @@ function buildComments() {
 
     likeButtonListeners();
     deleteButtonListeners();
-
-
-
-
 }
 
 //clears all comments from the page

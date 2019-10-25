@@ -843,19 +843,37 @@
   margin-top: 16px;
 }
 
-.conversation__like, .conversation__delete {
+.conversation__like-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.conversation__delete {
   border: 1px solid #e1e1e1;
   color: #323232;
   border-radius: 2px;
   background-color: #ffffff;
-  font-style: italic;
 }
 
-.conversation__like:hover, .conversation__delete:hover {
+.conversation__delete:hover {
   border-color: #323232;
   background-color: #323232;
   color: #ffffff;
   outline: none;
+}
+
+.conversation__like {
+  border: none;
+  color: #afafaf;
+  background-color: #ffffff;
+}
+
+.conversation__like:hover {
+  color: #323232;
 }
 
 .conversation__like-value {
@@ -1321,5 +1339,9 @@ h1, h2, h3, h4, h5, p {
 a {
   text-decoration: none;
   color: inherit;
+}
+
+.material-icons.md-18 {
+  font-size: 18px;
 }
 /*# sourceMappingURL=main.css.map */
