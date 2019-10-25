@@ -26,10 +26,16 @@ function displayComment(entry) {
     var name = document.createElement('h2');
     var date = document.createElement('h5');
     var comment = document.createElement('p');
-    var deleteBtn = document.createElement('img');
+    var footer = document.createElement('footer');
+    var likeBox = document.createElement('div');
+    var likeBtn = document.createElement('button');
+    var likeValue = document.createElement('span');
+    var deleteBtn = document.createElement('button');
+
 
     //assign classes
     newPost.setAttribute('class', 'conversation__post');
+    newPost.setAttribute('id', `${entry.id}`);
     imgBox.setAttribute('class', 'conversation__image-box');
     img.setAttribute('class', 'conversation__image');
     // img.setAttribute('src', './assets/images/' + entry.avatar);
@@ -39,6 +45,11 @@ function displayComment(entry) {
     name.setAttribute('class', 'conversation__name');
     date.setAttribute('class', 'conversation__date');
     comment.setAttribute('class', 'conversation__comment');
+
+    footer.setAttribute('class', 'conversation__footer');
+    likeBox.setAttribute('class', 'conversation__like-container');
+    likeBtn.setAttribute('class', 'conversation__like');
+    likeValue.setAttribute('class', 'conversation__like-value');
     deleteBtn.setAttribute('class', 'conversation__delete');
 
     //add content
@@ -46,7 +57,10 @@ function displayComment(entry) {
     date.innerHTML = dynamicTimestamp(entry.timestamp);
     // date.innerHTML = dayFormat(entry.timestamp);
     comment.innerHTML = entry.comment;
-    deleteBtn.setAttribute('src', './assets/images/icons/SVG/delete-24px.svg');
+
+    likeBtn.innerHTML = 'like';
+    likeValue.innerHTML = entry.likes;
+    deleteBtn.innerHTML = 'delete';
 
 
     //append together
@@ -55,10 +69,18 @@ function displayComment(entry) {
 
     header.appendChild(name);
     header.appendChild(date);
-    header.appendChild(deleteBtn);
+
+    likeBox.appendChild(likeBtn);
+    likeBox.innerHTML += '&nbsp;&#8226;&nbsp';
+    likeBox.appendChild(likeValue);
+
+    footer.appendChild(likeBox);
+    footer.appendChild(deleteBtn);
+
 
     textBox.appendChild(header);
     textBox.appendChild(comment);
+    textBox.appendChild(footer);
 
     newPost.appendChild(textBox);
 
@@ -104,6 +126,13 @@ function buildComments() {
     for (let i = 0; i < commentAry.length; i++) {
         displayComment(commentAry[i]);
     }
+
+    likeButtonListeners();
+    deleteButtonListeners();
+
+
+
+
 }
 
 //clears all comments from the page
@@ -118,6 +147,46 @@ function flushComments() {
 }
 
 
+function likeButtonListeners() {
+    var likeButtons = document.getElementsByClassName('conversation__like');
+
+
+    for (button of likeButtons) {
+        button.addEventListener("click", function (e) {
+            //this function does stuff
+            // console.log(e.target.parentNode.parentNode.parentNode.parentNode.getAttribute('id'));
+            // console.log(e.target.closest(".conversation__post").getAttribute('id'));
+            let id = e.target.closest(".conversation__post").getAttribute('id');
+            axios.put(`https://project-1-api.herokuapp.com/comments/${id}/like${apiString}`).then(response => {
+                commentAry.find(o => o.id === id).likes = response.data.likes;
+                flushComments();
+                buildComments();
+
+            });
+        });
+    };
+}
+
+function deleteButtonListeners() {
+    var deleteButtons = document.getElementsByClassName('conversation__delete');
+
+
+    for (button of deleteButtons) {
+        button.addEventListener("click", function (e) {
+            //this function does stuff
+            // console.log(e.target.parentNode.parentNode.parentNode.parentNode.getAttribute('id'));
+            // console.log(e.target.closest(".conversation__post").getAttribute('id'));
+            let id = e.target.closest(".conversation__post").getAttribute('id');
+            axios.delete(`https://project-1-api.herokuapp.com/comments/${id}${apiString}`).then(response => {
+                commentAry.splice(commentAry.indexOf(commentAry.find(o => o.id === id)), 1);
+                flushComments();
+                buildComments();
+
+            });
+        });
+    };
+}
+
 
 // Builds comments on initial page load
 axios.get('https://project-1-api.herokuapp.com/comments' + apiString).then(response => {
@@ -126,5 +195,13 @@ axios.get('https://project-1-api.herokuapp.com/comments' + apiString).then(respo
     for (let i = 0; i < commentAry.length; i++) {
         displayComment(commentAry[i]);
     }
+
+    likeButtonListeners();
+    deleteButtonListeners();
+
 });
+
+
+
+
 
