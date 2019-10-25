@@ -182,6 +182,13 @@
             outline: none;
         }
     }
+
+    &__delete {
+        width: 12px;
+        height: 12px;
+        color: $silver;
+
+    }
 }
 
 @include tablet {

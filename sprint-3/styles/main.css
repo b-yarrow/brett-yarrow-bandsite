@@ -826,6 +826,12 @@
   outline: none;
 }
 
+.conversation__delete {
+  width: 12px;
+  height: 12px;
+  color: #afafaf;
+}
+
 @media only screen and (min-width: 768px) {
   .conversation {
     padding: 48px 3.125vw 40px 3.125vw;
