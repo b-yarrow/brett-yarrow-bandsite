@@ -197,6 +197,15 @@
         border-radius: 2px;
         background-color: $white;
         // box-shadow: 0 40px 32px -4px #000000;
+        font-style: italic;
+        
+
+        &:hover {
+            border-color: $black;
+            background-color: $black;
+            color: $white;
+            outline: none;
+        }
     }
 
     &__like-value {

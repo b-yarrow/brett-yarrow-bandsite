@@ -21,7 +21,11 @@
     margin-bottom: 16px;
     width: 288px;
     height: 162px;
+    filter: grayscale(100%);
 
+    &:hover{
+      filter: grayscale(0%);
+    }
   }
 }
 

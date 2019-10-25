@@ -70,9 +70,9 @@ function displayComment(entry) {
     header.appendChild(name);
     header.appendChild(date);
 
-    likeBox.appendChild(likeBtn);
-    likeBox.innerHTML += '&nbsp;&#8226;&nbsp';
     likeBox.appendChild(likeValue);
+    likeBox.innerHTML += '&nbsp;&#8226;&nbsp';
+    likeBox.appendChild(likeBtn);
 
     footer.appendChild(likeBox);
     footer.appendChild(deleteBtn);
