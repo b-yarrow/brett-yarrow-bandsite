@@ -48,9 +48,24 @@
     </div>
   </section>
 
+  <!-- Trigger/Open The Modal -->
+  <!-- <button id="myBtn">Open Modal</button> -->
+
+  <!-- The Modal -->
+  <div id="myModal" class="modal">
+
+    <!-- Modal content -->
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <p class="modal-text"></p>
+      <table id="ticket-table" class="shows__table"></table>
+    </div>
+
+  </div>
+
   <section class="shows">
     <h1 class="shows__title">Shows</h1>
-    <table cellspacing="0" class="shows__table">
+    <table id="shows-table" cellspacing="0" class="shows__table">
       <!--  Table goes here  -->
     </table>
   </section>
@@ -80,7 +95,7 @@
           <span>Toronto, Ontario M5V 1L7</span>
         </div>
         <div class="footer__email">
-          info@thebeesknees.com
+          <a href="mailto:info@thebeesknees.com">info@thebeesknees.com</a>
         </div>
       </div>
       <div class="footer__contact">
@@ -93,7 +108,7 @@
           <span>US / South America / Japan</span>
         </div>
         <div class="footer__email">
-          marsha.vlasic@artistgrp.com
+          <a href="mailto:marsha.vlasic@artistgrp.com">marsha.vlasic@artistgrp.com</a>
         </div>
       </div>
       <div class="footer__contact">
@@ -106,7 +121,7 @@
           <span>UK / EU / AU</span>
         </div>
         <div class="footer__email">
-          RLW@wmeentertainment.co
+          <a href="mailto:RLW@wmeentertainment.co">RLW@wmeentertainment.co</a>
         </div>
       </div>
     </div>
@@ -121,6 +136,7 @@
     </p>
   </footer>
   <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <script src="../scripts/modal.js"></script>
   <script src="../scripts/api.js"></script>
   <script src="../scripts/dayFormat.js"></script>
   <script src="../scripts/shows.js"></script>

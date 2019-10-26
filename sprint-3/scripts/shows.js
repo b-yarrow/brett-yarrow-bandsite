@@ -187,6 +187,7 @@ function displayTable(table, shows) {
 
         row = tBody.insertRow();
         row.setAttribute('class', 'shows__tbl-row shows__tbl-row--desk');
+        row.setAttribute('id', show.id);
 
         cell = row.insertCell();
         cell.setAttribute('class', 'shows__heading shows__heading--mobile');
@@ -237,7 +238,8 @@ function displayTable(table, shows) {
 // START OF PROGRAM //
 
 viewportWidth = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
-table = document.querySelector('table');
+// table = document.querySelector('table');
+table = document.querySelector('#shows-table');
 
 //fetch data from API
 
@@ -254,6 +256,8 @@ axios.get('https://project-1-api.herokuapp.com/showdates' + apiString)
             displayTable(table, shows);
             sizedMobile = false;
         }
+
+        buyTicketsButtonListeners();
     });
 
 
@@ -276,4 +280,166 @@ addEvent(window, "resize", function (event) {
         sizedMobile = false;
     }
 });
+
+// Buy tickets button functionality
+function buyTicketsButtonListeners() {
+    var buyTicketsButtons = document.getElementsByClassName('shows__button');
+
+
+    for (button of buyTicketsButtons) {
+        button.addEventListener("click", function (e) {
+            //this function does stuff
+            // console.log(e.target.parentNode.parentNode.parentNode.parentNode.getAttribute('id'));
+            // console.log(e.target.closest(".conversation__post").getAttribute('id'));
+            // let id = String(e.target.closest(".shows__tbl-row").getAttribute('id'));
+            let idTest = e.target.closest(".shows__tbl-row").getAttribute('id');
+
+            // Fixes first display of first show entry.  First show id is a number instead of a string,
+            // so we convert it to a string so rest of function will operate.
+            if (idTest === "0") {
+                id = Number(idTest);
+            } else {
+                id = idTest;
+            }
+
+            console.log(id);
+            console.log(typeof id);
+
+            let showString = document.getElementsByClassName('modal-text')[0];
+            console.log(showString);
+            let clickedShow = shows.find(o => o.id === id);
+            console.log(clickedShow);
+            showString.innerHTML = `${clickedShow.date} @ ${clickedShow.place} in ${clickedShow.location}`;
+
+            let table = document.getElementById('ticket-table');
+            let tHead = table.createTHead();
+            let row = tHead.insertRow();
+            row.setAttribute('class', 'shows__tbl-row');
+
+            let th = document.createElement('th');
+            th.setAttribute('class', 'shows__heading shows__heading--desk');
+            let text = document.createTextNode('tier');
+
+            th.appendChild(text);
+            row.appendChild(th);
+
+            th = document.createElement('th');
+            th.setAttribute('class', 'shows__heading shows__heading--desk');
+            text = document.createTextNode('price');
+
+            th.appendChild(text);
+            row.appendChild(th);
+
+            th = document.createElement('th');
+            th.setAttribute('class', 'shows__heading shows__heading--desk');
+            text = document.createTextNode('qty');
+
+            th.appendChild(text);
+            row.appendChild(th);
+
+            th = document.createElement('th');
+            th.setAttribute('class', 'shows__heading shows__heading--desk');
+            text = document.createTextNode('subtotal');
+
+            th.appendChild(text);
+            row.appendChild(th);
+
+            let cell;
+            // create individual shows with the show object data
+            let tBody = table.createTBody();
+            row = tBody.insertRow();
+            row.setAttribute('class', 'shows__tbl-row shows__tbl-row--desk');
+
+            cell = row.insertCell();
+            cell.setAttribute('class', 'shows__date');
+            text = document.createTextNode('VIP');
+            cell.appendChild(text);
+
+            cell = row.insertCell();
+            cell.setAttribute('class', 'shows__venue');
+            text = document.createTextNode('$200.00');
+            cell.appendChild(text);
+
+            cell = row.insertCell();
+            cell.setAttribute('class', 'shows__venue');
+
+            text = document.createElement('input');
+            text.setAttribute('class', 'tbl__qty');
+            text.setAttribute('type', 'number');
+            text.setAttribute('min', '0');
+            text.setAttribute('placeholder', '0');
+            cell.appendChild(text);
+
+            cell = row.insertCell();
+            cell.setAttribute('class', 'shows__venue');
+            cell.setAttribute('id', 'subtotal');
+            text = document.createTextNode('$0.00');
+            cell.appendChild(text);
+
+            // FLOOR
+
+            row = tBody.insertRow();
+            row.setAttribute('class', 'shows__tbl-row shows__tbl-row--desk');
+
+            cell = row.insertCell();
+            cell.setAttribute('class', 'shows__date');
+            text = document.createTextNode('FLOOR');
+            cell.appendChild(text);
+
+            cell = row.insertCell();
+            cell.setAttribute('class', 'shows__venue');
+            text = document.createTextNode('$60.00');
+            cell.appendChild(text);
+
+            cell = row.insertCell();
+            cell.setAttribute('class', 'shows__venue');
+            text = document.createElement('input');
+            text.setAttribute('class', 'tbl__qty');
+            text.setAttribute('type', 'number');
+            text.setAttribute('min', '0');
+            text.setAttribute('placeholder', '0');
+            cell.appendChild(text);
+
+            row = tBody.insertRow();
+            row.setAttribute('class', 'shows__tbl-row shows__tbl-row--desk');
+
+            // STANDS
+
+            cell = row.insertCell();
+            cell.setAttribute('class', 'shows__date');
+            text = document.createTextNode('STANDS');
+            cell.appendChild(text);
+
+            cell = row.insertCell();
+            cell.setAttribute('class', 'shows__venue');
+            text = document.createTextNode('$35.00');
+            cell.appendChild(text);
+
+            cell = row.insertCell();
+            cell.setAttribute('class', 'shows__venue');
+            text = document.createElement('input');
+            text.setAttribute('class', 'tbl__qty');
+            text.setAttribute('type', 'number');
+            text.setAttribute('min', '0');
+            text.setAttribute('placeholder', '0');
+            cell.appendChild(text);
+
+
+            modal.style.display = "block";
+
+            var qtys = document.getElementsByClassName('tbl__qty');
+            console.log(qty);
+            var subtotal = document.getElementById('subtotal');
+            for (qty of qtys) {
+                qty.addEventListener("click", function (e) {
+                    subtotal.innerHTML = `$${qty.value * 200}.00`;
+
+                });
+            }
+
+        });
+
+    };
+}
+
 
